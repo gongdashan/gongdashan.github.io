@@ -1,0 +1,81 @@
+/* ============================================
+   布局系统：容器、栅格、页面骨架
+   ============================================ */
+
+@layer layout {
+
+  /* —— 通用容器 —— */
+  .container {
+    width: 100%;
+    max-width: var(--container-lg);
+    margin-inline: auto;
+    padding-inline: var(--space-5);
+  }
+
+  .container--sm  { max-width: var(--container-sm); }
+  .container--md  { max-width: var(--container-md); }
+  .container--xl  { max-width: var(--container-xl); }
+
+  @media (min-width: 768px) {
+    .container { padding-inline: var(--space-6); }
+  }
+
+  /* —— 区块（section）通用间距 —— */
+  .section {
+    padding-block: var(--space-8);
+  }
+
+  .section--lg {
+    padding-block: var(--space-9);
+  }
+
+  @media (min-width: 768px) {
+    .section    { padding-block: var(--space-9); }
+    .section--lg { padding-block: var(--space-10); }
+  }
+
+  /* —— 通用栅格（auto-fit 响应式） —— */
+  .grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .grid--cards {
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  }
+
+  .grid--2col { grid-template-columns: 1fr; }
+  .grid--3col { grid-template-columns: 1fr; }
+  .grid--4col { grid-template-columns: 1fr; }
+
+  @media (min-width: 640px) {
+    .grid--2col { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 768px) {
+    .grid--3col { grid-template-columns: repeat(3, 1fr); }
+    .grid--4col { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .grid--4col { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* —— 弹性盒辅助 —— */
+  .flex          { display: flex; }
+  .flex-center   { display: flex; align-items: center; justify-content: center; }
+  .flex-between  { display: flex; align-items: center; justify-content: space-between; }
+  .flex-col      { flex-direction: column; }
+  .flex-wrap     { flex-wrap: wrap; }
+
+  /* —— 页面骨架 —— */
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  .page-wrapper > main {
+    flex: 1;
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_说明": "首页数字成就。维护时直接修改下面的数字即可。lastUpdated 仅作记录用。",
+  "lastUpdated": "2026-05-07",
+  "items": [
+    {
+      "key": "familiesHelped",
+      "label": "已陪伴家庭",
+      "value": 23,
+      "suffix": "个",
+      "icon": "💛"
+    },
+    {
+      "key": "totalRaised",
+      "label": "累计筹款",
+      "value": 128000,
+      "prefix": "¥",
+      "icon": "🌱"
+    },
+    {
+      "key": "eventsHeld",
+      "label": "已开展活动",
+      "value": 15,
+      "suffix": "场",
+      "icon": "🎈"
+    },
+    {
+      "key": "volunteers",
+      "label": "志愿者伙伴",
+      "value": 56,
+      "suffix": "位",
+      "icon": "🤝"
+    }
+  ]
+}

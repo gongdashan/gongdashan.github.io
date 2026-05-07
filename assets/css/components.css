@@ -1,0 +1,375 @@
+/* ============================================
+   组件库：按钮、导航、页脚等
+   ============================================ */
+
+@layer components {
+
+  /* ============================================
+     🔘 按钮系统
+     ============================================ */
+  .btn {
+    /* 基础形态 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-sans);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all var(--duration-normal) var(--ease-out);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn:focus-visible {
+    outline: 3px solid var(--color-primary-soft);
+    outline-offset: 3px;
+  }
+
+  /* 主按钮：暖橘填充 */
+  .btn--primary {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn--primary:hover {
+    background-color: var(--color-primary-deep);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: white;
+  }
+
+  .btn--primary:active {
+    transform: translateY(0);
+  }
+
+  /* 次按钮：边框样式 */
+  .btn--secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .btn--secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* 幽灵按钮：纯文字 + 下划线 */
+  .btn--ghost {
+    background: transparent;
+    color: var(--color-text);
+    padding-inline: var(--space-3);
+  }
+
+  .btn--ghost:hover {
+    color: var(--color-primary);
+    background-color: var(--color-bg-soft);
+  }
+
+  /* 尺寸变体 */
+  .btn--sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--fs-sm);
+  }
+
+  .btn--lg {
+    padding: var(--space-4) var(--space-7);
+    font-size: var(--fs-lg);
+  }
+
+  /* ============================================
+     🧭 站点导航栏
+     ============================================ */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background-color: rgb(255 249 242 / 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-divider);
+    transition: box-shadow var(--duration-normal);
+  }
+
+  /* 滚动后阴影增强（由 JS 添加 .is-scrolled） */
+  .site-header.is-scrolled {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding-block: var(--space-3);
+  }
+
+  /* Logo 区域 */
+  .site-header__logo {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    transition: transform var(--duration-fast);
+  }
+
+  .site-header__logo:hover {
+    transform: scale(1.02);
+  }
+
+  .site-header__logo img {
+    height: 44px;
+    width: auto;
+  }
+
+  /* 主导航 */
+  .site-nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .site-nav__link {
+    position: relative;
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    color: var(--color-text);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-base);
+    border-radius: var(--radius-pill);
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .site-nav__link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-bg-soft);
+  }
+
+  /* 当前页高亮 */
+  .site-nav__link[aria-current="page"] {
+    color: var(--color-primary);
+    background-color: var(--color-bg-soft);
+  }
+
+  .site-nav__link[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    transform: translateX(-50%);
+  }
+
+  /* CTA 按钮（导航栏右侧） */
+  .site-nav__cta {
+    margin-left: var(--space-3);
+  }
+
+  /* 汉堡菜单按钮（移动端） */
+  .site-header__toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    transition: background-color var(--duration-fast);
+  }
+
+  .site-header__toggle:hover {
+    background-color: var(--color-bg-soft);
+  }
+
+  .site-header__toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* —— 移动端断点 —— */
+  @media (max-width: 900px) {
+    .site-header__toggle {
+      display: inline-flex;
+    }
+
+    /* 移动端导航：从右侧滑入 */
+    .site-nav {
+      position: fixed;
+      inset: 0 0 0 auto;
+      width: min(80vw, 320px);
+      background-color: var(--color-bg);
+      box-shadow: var(--shadow-xl);
+      transform: translateX(100%);
+      transition: transform var(--duration-slow) var(--ease-out);
+      padding: var(--space-7) var(--space-5) var(--space-5);
+      overflow-y: auto;
+      z-index: var(--z-modal);
+    }
+
+    .site-nav.is-open {
+      transform: translateX(0);
+    }
+
+    .site-nav__list {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-1);
+    }
+
+    .site-nav__link {
+      display: block;
+      padding: var(--space-4);
+      font-size: var(--fs-lg);
+      border-radius: var(--radius-md);
+    }
+
+    .site-nav__link[aria-current="page"]::after {
+      display: none;
+    }
+
+    .site-nav__cta {
+      margin-left: 0;
+      margin-top: var(--space-4);
+    }
+
+    .site-nav__cta .btn {
+      width: 100%;
+    }
+
+    /* 移动端遮罩层 */
+    .nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgb(61 46 42 / 0.4);
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duration-normal);
+      z-index: calc(var(--z-modal) - 1);
+    }
+
+    .nav-backdrop.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* 防止背景滚动 */
+    body.has-nav-open {
+      overflow: hidden;
+    }
+  }
+
+  /* ============================================
+     🦶 站点页脚
+     ============================================ */
+  .site-footer {
+    margin-top: var(--space-9);
+    padding-block: var(--space-8) var(--space-5);
+    background-color: var(--color-bg-soft);
+    border-top: 1px solid var(--color-divider);
+    color: var(--color-text-soft);
+    font-size: var(--fs-sm);
+  }
+
+  .site-footer__top {
+    display: grid;
+    gap: var(--space-7);
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .site-footer__top {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--space-6);
+    }
+  }
+
+  .site-footer__brand img {
+    height: 48px;
+    width: auto;
+    margin-bottom: var(--space-4);
+  }
+
+  .site-footer__tagline {
+    color: var(--color-text);
+    font-family: var(--font-serif);
+    font-size: var(--fs-lg);
+    margin-bottom: var(--space-3);
+  }
+
+  .site-footer__desc {
+    line-height: var(--lh-relaxed);
+    max-width: 36ch;
+  }
+
+  .site-footer__title {
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    margin-bottom: var(--space-4);
+  }
+
+  .site-footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .site-footer__list a {
+    color: var(--color-text-soft);
+    transition: color var(--duration-fast);
+    display: inline-block;
+  }
+
+  .site-footer__list a:hover {
+    color: var(--color-primary);
+    transform: translateX(2px);
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    text-align: center;
+    margin-top: var(--space-7);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-divider);
+    color: var(--color-text-muted);
+    font-size: var(--fs-xs);
+  }
+
+  @media (min-width: 768px) {
+    .site-footer__bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  .site-footer__heart {
+    color: var(--color-primary);
+    display: inline-block;
+    animation: heartbeat 2s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.15); }
+  }
+
+}

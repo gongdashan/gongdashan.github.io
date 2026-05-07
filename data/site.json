@@ -1,0 +1,34 @@
+{
+  "siteName": "小山设计社",
+  "siteNameEn": "Xiaoshan Design Society",
+  "tagline": "陪伴每一个来京求医的孩子",
+  "subTagline": "用一件小物，温暖一个家庭",
+  "heroIntro": "我们是一群普通人，做着一件温柔的小事——为来京长期治疗血液病、肾病的孩子和他们的家庭，送上一份资金、一次探访、一句问候。",
+  "description": "小山设计社是一个长期运营的公益组织，为来京长期治疗的血液病、肾病儿童家庭提供资金援助与探访关怀。",
+  "url": "https://gongdashan.github.io/",
+  "founded": "2022",
+  "mission": [
+    {
+      "icon": "💝",
+      "title": "资金援助",
+      "desc": "为求医路上的家庭，分担一部分治疗与生活的压力。"
+    },
+     {
+      "icon": "🚪",
+      "title": "上门探访",
+      "desc": "在医院、在出租屋，带去一份玩具、一句陪伴。"
+    },
+    {
+      "icon": "📣",
+      "title": "理念传播",
+      "desc": "让更多人看见这群孩子，让善意有迹可循。"
+    }
+  ],
+  "contact": {
+    "email": "hello@xiaoshan.org",
+    "wechat": "xiaoshan_design"
+  },
+  "social": {},
+  "formspreeId": "请在 https://formspree.io 注册后填入 form ID",
+  "ogImage": "assets/images/og/og-default.png"
+}

@@ -1,496 +1,316 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>时光小卖部 · 把旧时光，换成新希望</title>
-  <meta name="description" content="时光小卖部 —— 一场为守护老手艺人发起的公益义卖，每一件复古手作背后，都有一段值得被听见的故事。" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#E87A5D">
 
-  <style>
-    /* ============ 设计变量（统一主题控制） ============ */
-    :root {
-      /* 使用 oklch 实现更鲜艳、无障碍的配色 */
-      --color-bg:        oklch(98% 0.02 85);     /* 奶油白 */
-      --color-surface:   oklch(96% 0.04 85);     /* 浅奶黄 */
-      --color-primary:   oklch(72% 0.18 45);     /* 暖珊瑚橘 */
-      --color-accent:    oklch(88% 0.17 95);     /* 柠檬黄 */
-      --color-ink:       oklch(22% 0.02 60);     /* 墨黑 */
-      --color-muted:     oklch(50% 0.02 60);     /* 灰文字 */
-      --color-line:      oklch(90% 0.02 85);     /* 描边 */
+  <title>小山设计社 · 陪伴每一个来京求医的孩子</title>
+  <meta name="description" content="小山设计社是一个长期运营的公益组织，为来京长期治疗的血液病、肾病儿童家庭提供资金援助与探访关怀。">
+  <meta name="keywords" content="公益,义卖,儿童,血液病,肾病,小山设计社,捐赠,志愿者">
+  <meta name="author" content="小山设计社">
 
-      --radius-sm: 12px;
-      --radius-lg: 24px;
-      --shadow-soft: 0 6px 24px oklch(70% 0.1 45 / 0.12);
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="小山设计社 · 陪伴每一个来京求医的孩子">
+  <meta property="og:description" content="为来京长期治疗的血液病、肾病儿童家庭提供资金援助与探访关怀">
+  <meta property="og:url" content="https://gongdashan.github.io/">
+  <meta property="og:image" content="https://gongdashan.github.io/assets/images/og/og-default.png">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="小山设计社">
+  <meta name="twitter:card" content="summary_large_image">
 
-      --font-display: "Noto Serif SC", "Songti SC", Georgia, serif;
-      --font-body: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io;">
 
-      --space: clamp(1rem, 2vw, 1.5rem);
-    }
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
 
-    /* 深色模式适配 */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-bg:      oklch(20% 0.02 60);
-        --color-surface: oklch(25% 0.03 60);
-        --color-ink:     oklch(96% 0.02 85);
-        --color-muted:   oklch(70% 0.02 60);
-        --color-line:    oklch(35% 0.02 60);
-        --shadow-soft: 0 6px 24px oklch(0% 0 0 / 0.4);
-      }
-    }
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
 
-    /* ============ 基础重置 ============ */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      background: var(--color-bg);
-      color: var(--color-ink);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      transition: background 0.4s ease, color 0.4s ease;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; border: none; background: none; }
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
 
-    /* 键盘焦点态（无障碍） */
-    :focus-visible {
-      outline: 3px solid var(--color-primary);
-      outline-offset: 3px;
-      border-radius: 4px;
-    }
-
-    /* ============ 容器 ============ */
-    .container {
-      width: min(1200px, 92%);
-      margin-inline: auto;
-    }
-
-    /* ============ 顶部导航 ============ */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: oklch(from var(--color-bg) l c h / 0.8);
-      border-bottom: 1px solid var(--color-line);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-block: 1rem;
-    }
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-    .logo span { color: var(--color-primary); }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0; padding: 0;
-    }
-    .nav-links a {
-      font-size: 0.95rem;
-      position: relative;
-      padding-block: 0.25rem;
-    }
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0; bottom: 0;
-      height: 2px; width: 0;
-      background: var(--color-primary);
-      transition: width 0.3s ease;
-    }
-    .nav-links a:hover::after,
-    .nav-links a:focus-visible::after { width: 100%; }
-
-    @media (max-width: 640px) {
-      .nav-links { display: none; }  /* 移动端可后续接入抽屉菜单 */
-    }
-
-    /* ============ Hero 巨幅标题区 ============ */
-    .hero {
-      padding-block: clamp(3rem, 10vw, 7rem);
-      display: grid;
-      gap: 2rem;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      width: fit-content;
-      padding: 0.4rem 0.9rem;
-      background: var(--color-accent);
-      color: var(--color-ink);
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-    .hero-eyebrow::before {
-      content: "✦";
-      color: var(--color-primary);
-    }
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 9vw, 7rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin: 0;
-      font-weight: 700;
-    }
-    .hero-title em {
-      font-style: normal;
-      color: var(--color-primary);
-      position: relative;
-      display: inline-block;
-    }
-    .hero-title em::after {
-      content: "";
-      position: absolute;
-      left: 0; right: 0; bottom: 0.1em;
-      height: 0.25em;
-      background: var(--color-accent);
-      z-index: -1;
-      border-radius: 4px;
-    }
-    .hero-desc {
-      max-width: 50ch;
-      font-size: clamp(1rem, 1.6vw, 1.15rem);
-      color: var(--color-muted);
-    }
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.9rem 1.6rem;
-      background: var(--color-ink);
-      color: var(--color-bg);
-      border-radius: 999px;
-      font-weight: 600;
-      width: fit-content;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .hero-cta:hover { transform: translateY(-2px); background: var(--color-primary); }
-    .hero-cta::after {
-      content: "→";
-      transition: transform 0.2s ease;
-    }
-    .hero-cta:hover::after { transform: translate(4px, 0); }
-
-    /* ============ 数据条（公益力） ============ */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      padding: 1.5rem;
-      background: var(--color-surface);
-      border-radius: var(--radius-lg);
-      margin-block: 2rem 4rem;
-    }
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      color: var(--color-primary);
-      font-weight: 700;
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.9rem;
-      color: var(--color-muted);
-      margin-top: 0.4rem;
-    }
-
-    /* ============ 商品区 ============ */
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin: 0;
-    }
-    .section-link { color: var(--color-primary); font-weight: 600; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: clamp(1rem, 2.5vw, 2rem);
-    }
-    .card {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: transform 0.3s ease;
-    }
-    .card:hover { transform: translateY(-4px); }
-    .card-img {
-      aspect-ratio: 4 / 5;
-      border-radius: var(--radius-lg);
-      background: var(--color-surface);
-      overflow: hidden;
-      position: relative;
-      display: grid;
-      place-items: center;
-      font-size: 4rem;
-    }
-    .card-tag {
-      position: absolute;
-      top: 0.75rem; left: 0.75rem;
-      background: var(--color-accent);
-      color: var(--color-ink);
-      font-size: 0.75rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-weight: 600;
-    }
-    .card-name {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin: 0;
-    }
-    .card-story {
-      font-size: 0.85rem;
-      color: var(--color-muted);
-      margin: 0;
-    }
-    .card-price {
-      font-weight: 700;
-      color: var(--color-primary);
-    }
-
-    /* ============ 故事区块 ============ */
-    .story {
-      margin-block: 5rem;
-      padding: clamp(2rem, 5vw, 4rem);
-      background: var(--color-primary);
-      color: oklch(98% 0.02 85);
-      border-radius: var(--radius-lg);
-      display: grid;
-      gap: 1.5rem;
-    }
-    .story h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      margin: 0;
-      max-width: 18ch;
-    }
-    .story p { max-width: 60ch; opacity: 0.9; }
-    .story a {
-      width: fit-content;
-      padding: 0.75rem 1.4rem;
-      background: var(--color-bg);
-      color: var(--color-ink);
-      border-radius: 999px;
-      font-weight: 600;
-      transition: transform 0.2s ease;
-    }
-    .story a:hover { transform: translateY(-2px); }
-
-    /* ============ 页脚 ============ */
-    footer {
-      padding-block: 2.5rem;
-      border-top: 1px solid var(--color-line);
-      color: var(--color-muted);
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    /* ============ 滚动淡入动画（轻量微交互） ============ */
-    @media (prefers-reduced-motion: no-preference) {
-      .reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-      }
-      .reveal.is-visible {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ========== 导航 ========== -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#" class="logo">时光<span>小卖部</span></a>
-      <nav aria-label="主导航">
-        <ul class="nav-links">
-          <li><a href="#shop">义卖商品</a></li>
-          <li><a href="#story">公益故事</a></li>
-          <li><a href="#join">参与方式</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- ========== Hero ========== -->
-    <section class="hero container">
-      <span class="hero-eyebrow">2026 春季公益义卖</span>
-      <h1 class="hero-title">
-        把<em>旧时光</em>，<br />换成新希望。
-      </h1>
-      <p class="hero-desc">
-        时光小卖部，是一场为守护老手艺人发起的公益义卖。每一件复古手作背后，都有一段值得被听见的故事。你买下的，不只是物件，是匠人下一年的炉火。
-      </p>
-      <a href="#shop" class="hero-cta">逛逛小卖部</a>
-
-      <!-- 数据条 -->
-      <div class="stats reveal" aria-label="公益数据">
-        <div>
-          <div class="stat-num">128</div>
-          <div class="stat-label">位老手艺人受助</div>
-        </div>
-        <div>
-          <div class="stat-num">¥86,420</div>
-          <div class="stat-label">已筹善款</div>
-        </div>
-        <div>
-          <div class="stat-num">37</div>
-          <div class="stat-label">项濒危技艺被记录</div>
-        </div>
-        <div>
-          <div class="stat-num">100%</div>
-          <div class="stat-label">收益直达匠人</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== 商品网格 ========== -->
-    <section id="shop" class="container">
-      <div class="section-head">
-        <h2 class="section-title">本期精选好物</h2>
-        <a href="#" class="section-link">查看全部 →</a>
-      </div>
-
-      <div class="grid">
-        <article class="card reveal">
-          <div class="card-img" aria-hidden="true">🧶
-            <span class="card-tag">手工编织</span>
-          </div>
-          <h3 class="card-name">外婆的毛线坐垫</h3>
-          <p class="card-story">来自李奶奶 · 编织 47 年</p>
-          <span class="card-price">¥ 88</span>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-img" aria-hidden="true">🏮
-            <span class="card-tag">非遗</span>
-          </div>
-          <h3 class="card-name">手扎竹编小灯笼</h3>
-          <p class="card-story">来自王爷爷 · 篾匠世家</p>
-          <span class="card-price">¥ 128</span>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-img" aria-hidden="true">📔
-            <span class="card-tag">复古</span>
-          </div>
-          <h3 class="card-name">线装手作笔记本</h3>
-          <p class="card-story">来自周师傅 · 古法装帧</p>
-          <span class="card-price">¥ 56</span>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-img" aria-hidden="true">🍶
-            <span class="card-tag">陶艺</span>
-          </div>
-          <h3 class="card-name">柴烧粗陶茶杯</h3>
-          <p class="card-story">来自陈师傅 · 龙窑柴烧</p>
-          <span class="card-price">¥ 168</span>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-img" aria-hidden="true">🪡
-            <span class="card-tag">刺绣</span>
-          </div>
-          <h3 class="card-name">苗绣口金零钱包</h3>
-          <p class="card-story">来自杨阿婆 · 苗寨手绣</p>
-          <span class="card-price">¥ 98</span>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-img" aria-hidden="true">🧸
-            <span class="card-tag">布艺</span>
-          </div>
-          <h3 class="card-name">老布拼接玩偶</h3>
-          <p class="card-story">来自赵阿姨 · 旧物新生</p>
-          <span class="card-price">¥ 76</span>
-        </article>
-      </div>
-    </section>
-
-    <!-- ========== 故事区块 ========== -->
-    <section id="story" class="story container reveal">
-      <h2>每一双布满老茧的手，都在和时间赛跑。</h2>
-      <p>
-        我们走过 12 个省份，记录下 37 项即将失传的手艺。这些老人，不是不愿教，而是没有人愿意学。我们做不了太多，但至少可以让他们的作品，被看见，被珍惜，被买走，让他们知道：你做的东西，有人喜欢。
-      </p>
-      <a href="#join">读他们的故事</a>
-    </section>
-
-    <!-- ========== 参与方式 ========== -->
-    <section id="join" class="container" style="margin-block: 4rem;">
-      <div class="section-head">
-        <h2 class="section-title">如何参与</h2>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <div class="card-img" aria-hidden="true">🛍️</div>
-          <h3 class="card-name">购买义卖商品</h3>
-          <p class="card-story">收益 100% 流向匠人</p>
-        </article>
-        <article class="card">
-          <div class="card-img" aria-hidden="true">📣</div>
-          <h3 class="card-name">分享给朋友</h3>
-          <p class="card-story">让更多人听见这些故事</p>
-        </article>
-        <article class="card">
-          <div class="card-img" aria-hidden="true">✍️</div>
-          <h3 class="card-name">成为志愿者</h3>
-          <p class="card-story">和我们一起记录手艺</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <!-- ========== 页脚 ========== -->
-  <footer>
-    <div class="container">
-      © 2026 时光小卖部 · 一个公益独立项目 · 把旧时光，换成新希望
-    </div>
-  </footer>
-
-  <!-- ========== 轻量动画脚本（Intersection Observer） ========== -->
-  <script>
-    // 滚动淡入：低性能消耗的微交互
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "小山设计社",
+    "alternateName": "Xiaoshan Design Society",
+    "url": "https://gongdashan.github.io/",
+    "logo": "https://gongdashan.github.io/assets/icons/logo.svg",
+    "description": "为来京长期治疗的血液病、肾病儿童家庭提供资金援助与探访关怀的公益组织"
+  }
   </script>
+</head>
+
+<body data-page="home">
+  <a href="#main" class="skip-link">跳到主要内容</a>
+
+  <div class="page-wrapper">
+
+    <!-- ===== 站点导航 ===== -->
+    <header class="site-header" role="banner">
+      <div class="container">
+        <div class="site-header__inner">
+          <a href="/" class="site-header__logo" aria-label="小山设计社首页">
+            <img src="assets/icons/logo.svg" alt="小山设计社" width="240" height="64">
+          </a>
+
+          <nav class="site-nav" id="site-nav" aria-label="主导航">
+            <ul class="site-nav__list" role="list">
+              <li><a class="site-nav__link" href="/">首页</a></li>
+              <li><a class="site-nav__link" href="pages/shop.html">义卖商品</a></li>
+              <li><a class="site-nav__link" href="pages/events.html">活动记录</a></li>
+              <li><a class="site-nav__link" href="pages/donations.html">善款去向</a></li>
+              <li><a class="site-nav__link" href="pages/about.html">关于我们</a></li>
+              <li class="site-nav__cta">
+                <a class="btn btn--primary btn--sm" href="pages/contact.html">加入我们</a>
+              </li>
+            </ul>
+          </nav>
+
+          <button type="button"
+                  class="site-header__toggle"
+                  aria-controls="site-nav"
+                  aria-expanded="false"
+                  aria-label="打开菜单">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7"/>
+              <line x1="4" y1="12" x2="20" y2="12"/>
+              <line x1="4" y1="17" x2="20" y2="17"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main" role="main">
+
+      <!-- ===== 🦸 Hero 英雄区 ===== -->
+      <section class="hero" aria-labelledby="hero-title">
+        <!-- 手绘装饰元素 -->
+        <img class="hero__decoration hero__decoration--cloud-1"
+             src="assets/decorations/cloud.svg" alt="" aria-hidden="true">
+        <img class="hero__decoration hero__decoration--cloud-2"
+             src="assets/decorations/cloud.svg" alt="" aria-hidden="true">
+        <img class="hero__decoration hero__decoration--sun"
+             src="assets/decorations/sun.svg" alt="" aria-hidden="true">
+        <img class="hero__decoration hero__decoration--plane"
+             src="assets/decorations/paper-plane.svg" alt="" aria-hidden="true">
+        <img class="hero__decoration hero__decoration--star-1"
+             src="assets/decorations/star.svg" alt="" aria-hidden="true">
+        <img class="hero__decoration hero__decoration--star-2"
+             src="assets/decorations/star.svg" alt="" aria-hidden="true">
+
+        <div class="container">
+          <div class="hero__inner">
+            <div class="hero__badge fade-in">
+              <span class="hero__badge-dot" aria-hidden="true"></span>
+              <span>2026 春季义卖正在进行中</span>
+            </div>
+
+            <h1 id="hero-title" class="hero__title fade-in-up delay-1">
+              陪伴每一个<br>
+              <span class="hero__title-accent">来京求医的孩子</span>
+            </h1>
+
+            <p class="hero__subtitle fade-in-up delay-2">
+              我们是一群普通人，做着一件温柔的小事——为来京长期治疗血液病、肾病的孩子和他们的家庭，送上一份资金、一次探访、一句问候。
+            </p>
+
+            <div class="hero__actions fade-in-up delay-3">
+              <a href="pages/shop.html" class="btn btn--primary btn--lg">
+                🛍️ 浏览义卖商品
+              </a>
+              <a href="pages/about.html" class="btn btn--secondary btn--lg">
+                了解我们的故事
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 💛 使命陈述 ===== -->
+      <section class="mission section" aria-labelledby="mission-title">
+        <div class="container">
+          <h2 id="mission-title" class="mission__title">我们做什么</h2>
+          <p class="mission__lede">
+            把每一份善意，<br class="show-mobile">变成可被孩子触摸的温度。
+          </p>
+
+          <div class="mission__grid">
+            <article class="mission__card">
+              <div class="mission__icon" aria-hidden="true">💝</div>
+              <h3 class="mission__card-title">资金援助</h3>
+              <p class="mission__card-desc">
+                为求医路上的家庭，分担一部分治疗与生活的压力。
+              </p>
+            </article>
+
+            <article class="mission__card">
+              <div class="mission__icon" aria-hidden="true">🚪</div>
+              <h3 class="mission__card-title">上门探访</h3>
+              <p class="mission__card-desc">
+                在医院、在出租屋，带去一份玩具、一句陪伴。
+              </p>
+            </article>
+
+            <article class="mission__card">
+              <div class="mission__icon" aria-hidden="true">📣</div>
+              <h3 class="mission__card-title">理念传播</h3>
+              <p class="mission__card-desc">
+                让更多人看见这群孩子，让善意有迹可循。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 📊 数字成就 ===== -->
+      <section class="stats section" aria-labelledby="stats-title">
+        <div class="container stats__inner">
+          <h2 id="stats-title" class="stats__title">温度，可以被衡量</h2>
+          <p class="stats__lede">截至今天，我们一起做到了：</p>
+
+          <div class="stats__grid" data-stats-grid>
+            <!-- JS 渲染 -->
+            <p style="grid-column:1/-1; text-align:center; opacity:0.8;">数据加载中…</p>
+          </div>
+
+          <p style="text-align:center; margin-top: var(--space-6); opacity:0.85; font-size: var(--fs-sm);">
+            数据更新于 <time datetime="2026-05-07">2026-05-07</time>
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== 🛍️ 精选商品（占位）===== -->
+      <section class="section" aria-labelledby="featured-products-title">
+        <div class="container">
+          <header class="home-section__header">
+            <h2 id="featured-products-title" class="home-section__title">精选义卖</h2>
+            <p class="home-section__lede">
+              每一件商品背后，都是一个家庭的故事。
+            </p>
+          </header>
+
+          <div class="placeholder-grid">
+            <div class="placeholder-card">商品 1（Step 4）</div>
+            <div class="placeholder-card">商品 2（Step 4）</div>
+            <div class="placeholder-card">商品 3（Step 4）</div>
+            <div class="placeholder-card">商品 4（Step 4）</div>
+          </div>
+
+          <div class="home-section__more">
+            <a href="pages/shop.html" class="btn btn--secondary">查看全部商品 →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 🎈 最新活动（占位）===== -->
+      <section class="section" style="background-color: var(--color-bg-soft);" aria-labelledby="recent-events-title">
+        <div class="container">
+          <header class="home-section__header">
+            <h2 id="recent-events-title" class="home-section__title">最新活动</h2>
+            <p class="home-section__lede">
+              每一次出现，都是一次温暖的接力。
+            </p>
+          </header>
+
+          <div class="placeholder-grid">
+            <div class="placeholder-card">活动 1（Step 5）</div>
+            <div class="placeholder-card">活动 2（Step 5）</div>
+            <div class="placeholder-card">活动 3（Step 5）</div>
+          </div>
+
+          <div class="home-section__more">
+            <a href="pages/events.html" class="btn btn--secondary">查看全部活动 →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 🎯 底部 CTA 召唤区 ===== -->
+      <section class="cta-banner" aria-labelledby="cta-title">
+        <div class="container cta-banner__inner">
+          <h2 id="cta-title" class="cta-banner__title">让我们一起，做一件温柔的小事</h2>
+          <p class="cta-banner__desc">
+            无论是购买一件义卖商品、参与一次活动，还是仅仅把我们告诉你身边的朋友——<br>
+            每一份善意都不会落空。
+          </p>
+          <div class="cta-banner__actions">
+            <a href="pages/contact.html" class="btn btn--primary btn--lg">🤝 我想加入</a>
+            <a href="pages/donations.html" class="btn btn--secondary btn--lg">查看善款去向</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== 站点页脚 ===== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <img src="assets/icons/logo.svg" alt="小山设计社" width="240" height="64">
+            <p class="site-footer__tagline">陪伴每一个来京求医的孩子</p>
+            <p class="site-footer__desc">
+              小山设计社是一个长期运营的公益组织，为来京长期治疗的血液病、肾病儿童家庭提供资金援助与探访关怀。
+            </p>
+          </div>
+
+          <div>
+            <h3 class="site-footer__title">快速导航</h3>
+            <ul class="site-footer__list" role="list">
+              <li><a href="/">首页</a></li>
+              <li><a href="pages/shop.html">义卖商品</a></li>
+              <li><a href="pages/events.html">活动记录</a></li>
+              <li><a href="pages/donations.html">善款去向</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="site-footer__title">参与我们</h3>
+            <ul class="site-footer__list" role="list">
+              <li><a href="pages/about.html">关于我们</a></li>
+              <li><a href="pages/contact.html">联系我们</a></li>
+              <li><a href="pages/contact.html">成为志愿者</a></li>
+              <li><a href="pages/contact.html">企业合作</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="site-footer__title">联系方式</h3>
+            <ul class="site-footer__list" role="list">
+              <li>📧 hello@xiaoshan.org</li>
+              <li>💬 微信：xiaoshan_design</li>
+              <li>📍 北京</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            © <span data-current-year>2026</span> 小山设计社 ·
+            用 <span class="site-footer__heart" aria-hidden="true">❤</span> 制作
+          </p>
+          <p>
+            <a href="#" style="color:inherit;">隐私声明</a> ·
+            <a href="https://github.com/gongdashan/gongdashan.github.io" rel="noopener noreferrer" style="color:inherit;">源代码</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>

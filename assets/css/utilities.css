@@ -1,0 +1,77 @@
+/* ============================================
+   工具类（按需使用，避免在 HTML 写 style）
+   ============================================ */
+
+@layer utilities {
+
+  /* 文本对齐 */
+  .text-center { text-align: center; }
+  .text-left   { text-align: left; }
+  .text-right  { text-align: right; }
+
+  /* 文字颜色 */
+  .text-primary { color: var(--color-primary); }
+  .text-soft    { color: var(--color-text-soft); }
+  .text-muted   { color: var(--color-text-muted); }
+
+  /* 字体 */
+  .font-serif { font-family: var(--font-serif); }
+  .font-sans  { font-family: var(--font-sans); }
+
+  /* 字号 */
+  .text-xs   { font-size: var(--fs-xs); }
+  .text-sm   { font-size: var(--fs-sm); }
+  .text-lg   { font-size: var(--fs-lg); }
+  .text-xl   { font-size: var(--fs-xl); }
+
+  /* 字重 */
+  .fw-medium   { font-weight: var(--fw-medium); }
+  .fw-semibold { font-weight: var(--fw-semibold); }
+  .fw-bold     { font-weight: var(--fw-bold); }
+
+  /* 间距 */
+  .mt-3 { margin-top: var(--space-3); }
+  .mt-4 { margin-top: var(--space-4); }
+  .mt-5 { margin-top: var(--space-5); }
+  .mt-6 { margin-top: var(--space-6); }
+  .mt-7 { margin-top: var(--space-7); }
+
+  /* 最大宽度 */
+  .max-prose { max-width: 60ch; }
+  .mx-auto   { margin-inline: auto; }
+
+  /* 视觉效果 */
+  .rounded-md { border-radius: var(--radius-md); }
+  .rounded-lg { border-radius: var(--radius-lg); }
+  .rounded-xl { border-radius: var(--radius-xl); }
+
+  .shadow-sm { box-shadow: var(--shadow-sm); }
+  .shadow-md { box-shadow: var(--shadow-md); }
+  .shadow-lg { box-shadow: var(--shadow-lg); }
+
+  /* 入场动画 */
+  .fade-in {
+    animation: fadeIn var(--duration-slow) var(--ease-out) both;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* 延迟动画（用于错落入场）*/
+  .delay-1 { animation-delay: 100ms; }
+  .delay-2 { animation-delay: 200ms; }
+  .delay-3 { animation-delay: 300ms; }
+  .delay-4 { animation-delay: 400ms; }
+
+}

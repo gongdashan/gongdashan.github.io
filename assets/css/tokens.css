@@ -1,0 +1,121 @@
+/* ============================================
+   设计令牌 · 小山设计社
+   修改这里 = 修改全站视觉
+   ============================================ */
+
+:root {
+  /* —— 🎨 品牌色 —— */
+  --color-primary:        #E87A5D;
+  --color-primary-soft:   #F4A48E;
+  --color-primary-deep:   #C45F44;
+
+  --color-accent-yellow:  #F5C77E;
+  --color-accent-mint:    #A8D5BA;
+  --color-accent-blue:    #7FB3D5;
+
+  /* —— ⬜ 中性色 —— */
+  --color-bg:             #FFF9F2;
+  --color-bg-soft:        #FDF1E1;
+  --color-bg-card:        #FFFFFF;
+
+  --color-text:           #3D2E2A;
+  --color-text-soft:      #7A6660;
+  --color-text-muted:     #B5A89F;
+
+  --color-border:         #EFE3D4;
+  --color-divider:        #F5EBDD;
+
+  /* 状态色 */
+  --color-success:        #6FB58A;
+  --color-warning:        #E8A85C;
+  --color-error:          #D9665F;
+
+  /* —— 📏 间距系统（8px 基准） —— */
+  --space-1:   0.25rem;   /* 4px  */
+  --space-2:   0.5rem;    /* 8px  */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.5rem;    /* 24px */
+  --space-6:   2rem;      /* 32px */
+  --space-7:   3rem;      /* 48px */
+  --space-8:   4rem;      /* 64px */
+  --space-9:   6rem;      /* 96px */
+  --space-10:  8rem;      /* 128px */
+
+  /* —— 🔤 流体字号（自适应屏幕） —— */
+  --fs-xs:   clamp(0.75rem,  0.7rem + 0.2vw,  0.875rem);
+  --fs-sm:   clamp(0.875rem, 0.83rem + 0.2vw, 1rem);
+  --fs-base: clamp(1rem,     0.95rem + 0.2vw, 1.125rem);
+  --fs-lg:   clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+  --fs-xl:   clamp(1.375rem, 1.2rem + 0.8vw,  1.75rem);
+  --fs-2xl:  clamp(1.75rem,  1.5rem + 1.2vw,  2.5rem);
+  --fs-3xl:  clamp(2.25rem,  1.8rem + 2vw,    3.5rem);
+  --fs-4xl:  clamp(2.75rem,  2rem + 3vw,      4.5rem);
+
+  /* —— 📚 字体家族 —— */
+  --font-serif: 'LXGW WenKai', 'LXGW WenKai Screen', 'KaiTi', '楷体', serif;
+  --font-sans:  'Manrope', 'Source Han Sans SC', 'PingFang SC',
+                'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+  --font-mono:  ui-monospace, 'SF Mono', 'Consolas', monospace;
+
+  /* —— ⚖️ 字重 —— */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* —— 📐 行高 —— */
+  --lh-tight:   1.2;
+  --lh-snug:    1.4;
+  --lh-normal:  1.6;
+  --lh-relaxed: 1.8;
+
+  /* —— 🟧 圆角 —— */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-pill: 9999px;
+
+  /* —— 🌫️ 阴影（带暖色调） —— */
+  --shadow-sm:  0 1px 2px rgba(232, 122, 93, 0.08);
+  --shadow-md:  0 4px 12px rgba(232, 122, 93, 0.10);
+  --shadow-lg:  0 12px 32px rgba(232, 122, 93, 0.14);
+  --shadow-xl:  0 24px 60px rgba(232, 122, 93, 0.18);
+
+  /* —— 📦 容器最大宽度 —— */
+  --container-sm:  640px;
+  --container-md:  960px;
+  --container-lg:  1200px;
+  --container-xl:  1400px;
+
+  /* —— ⏱️ 动效时长 —— */
+  --duration-fast:   150ms;
+  --duration-normal: 280ms;
+  --duration-slow:   500ms;
+
+  /* —— 🌀 缓动函数 —— */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* —— 🗂️ z-index 层级 —— */
+  --z-base:     1;
+  --z-dropdown: 10;
+  --z-sticky:   100;
+  --z-overlay:  500;
+  --z-modal:    1000;
+  --z-toast:    2000;
+}
+
+/* —— 🎬 尊重用户的动画偏好 —— */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
