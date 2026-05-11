@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#E87A5D">
+
+  <title>义卖商品 · 小山设计社</title>
+  <meta name="description" content="小山设计社的文创义卖商品，每一件商品的部分收益都将用于来京求医的儿童家庭。">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="义卖商品 · 小山设计社">
+  <meta property="og:description" content="每一次拥有，都更有意义。">
+  <meta property="og:url" content="https://gongdashan.github.io/pages/shop.html">
+  <meta property="og:image" content="https://gongdashan.github.io/assets/images/og/og-default.png">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/utilities.css">
+</head>
+
+<body data-page="shop">
+  <a href="#main" class="skip-link">跳到主要内容</a>
+
+  <div class="page-wrapper">
+
+    <!-- ===== 站点导航 ===== -->
+    <header class="site-header" role="banner">
+      <div class="container">
+        <div class="site-header__inner">
+          <a href="../" class="site-header__logo" aria-label="小山设计社首页">
+            <img src="../assets/icons/logo.svg" alt="小山设计社" width="240" height="64">
+          </a>
+
+          <nav class="site-nav" id="site-nav" aria-label="主导航">
+            <ul class="site-nav__list" role="list">
+              <li><a class="site-nav__link" href="../">首页</a></li>
+              <li><a class="site-nav__link" href="shop.html">义卖商品</a></li>
+              <li><a class="site-nav__link" href="events.html">活动记录</a></li>
+              <li><a class="site-nav__link" href="donations.html">善款去向</a></li>
+              <li><a class="site-nav__link" href="about.html">关于我们</a></li>
+              <li class="site-nav__cta">
+                <a class="btn btn--primary btn--sm" href="contact.html">加入我们</a>
+              </li>
+            </ul>
+          </nav>
+
+          <button type="button"
+                  class="site-header__toggle"
+                  aria-controls="site-nav"
+                  aria-expanded="false"
+                  aria-label="打开菜单">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7"/>
+              <line x1="4" y1="12" x2="20" y2="12"/>
+              <line x1="4" y1="17" x2="20" y2="17"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main" role="main">
+
+      <!-- 页面标题区 -->
+      <section class="shop-hero">
+        <div class="container">
+          <h1 class="shop-hero__title">义卖商品</h1>
+          <p class="shop-hero__lede">
+            每一件文创产品的部分收益，都将持续捐赠给来京治疗的孩子和他们的家庭。<br>
+            让每一次拥有，都更有意义。
+          </p>
+          <p class="shop-hero__note">
+            💡 本页所有商品共用同一个收款码，下单时请备注「商品名 + 数量 + 联系方式」
+          </p>
+        </div>
+      </section>
+
+      <!-- 商品列表区 -->
+      <section class="section" aria-label="商品列表">
+        <div class="container">
+
+          <!-- 分类筛选 -->
+          <div class="filter-bar"
+               data-filter-bar
+               role="group"
+               aria-label="按分类筛选商品">
+            <!-- JS 渲染 -->
+          </div>
+
+          <!-- 商品网格 -->
+          <div class="shop-grid" data-products-grid>
+            <p style="grid-column:1/-1; text-align:center; color:var(--color-text-muted); padding:var(--space-8) 0;">
+              商品加载中…
+            </p>
+          </div>
+
+          <!-- 空状态（默认隐藏）-->
+          <div class="empty-state" data-empty-state hidden>
+            <div class="empty-state__icon">🪹</div>
+            <p>该分类下暂时还没有商品</p>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== 页脚（与首页同步）===== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <img src="../assets/icons/logo.svg" alt="小山设计社" width="240" height="64">
+            <p class="site-footer__tagline">让每一次拥有，都更有意义</p>
+            <p class="site-footer__desc">
+              小山设计社致力于将企业文创的部分收益捐赠到公益组织，让每一次拥有更有意义。
+            </p>
+          </div>
+
+          <div>
+            <h3 class="site-footer__title">快速导航</h3>
+            <ul class="site-footer__list" role="list">
+              <li><a href="../">首页</a></li>
+              <li><a href="shop.html">义卖商品</a></li>
+              <li><a href="events.html">活动记录</a></li>
+              <li><a href="donations.html">善款去向</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="site-footer__title">参与我们</h3>
+            <ul class="site-footer__list" role="list">
+              <li><a href="about.html">关于我们</a></li>
+              <li><a href="contact.html">联系我们</a></li>
+              <li><a href="contact.html">成为志愿者</a></li>
+              <li><a href="contact.html">企业合作</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="site-footer__title">联系方式</h3>
+            <ul class="site-footer__list" role="list">
+              <li>📧 hello@xiaoshan.org</li>
+              <li>💬 微信：xiaoshan_design</li>
+              <li>📍 北京</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            © <span data-current-year>2026</span> 小山设计社 ·
+            用 <span class="site-footer__heart" aria-hidden="true">❤</span> 制作
+          </p>
+          <p>
+            <a href="#" style="color:inherit;">隐私声明</a> ·
+            <a href="https://github.com/gongdashan/gongdashan.github.io" rel="noopener noreferrer" style="color:inherit;">源代码</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

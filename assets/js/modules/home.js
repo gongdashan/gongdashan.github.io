@@ -1,19 +1,22 @@
 /**
  * 首页模块
- * - 加载 stats.json 渲染数字成就
- * - 数字滚动动画（IntersectionObserver 触发）
+ * - 渲染 Hero 信任条
+ * - 渲染精选商品（featured: true 的前 4 件）
  * @module home
  */
 
+import { renderProductCardWithBase } from './product-card.js';
+
 export async function initHome() {
-  await renderStats();
+  await Promise.all([
+    renderTrustBar(),
+    renderFeaturedProducts()
+  ]);
 }
 
-/**
- * 渲染数字成就
- */
-async function renderStats() {
-  const container = document.querySelector('[data-stats-grid]');
+/* ============ 信任条 ============ */
+async function renderTrustBar() {
+  const container = document.querySelector('[data-trust-bar]');
   if (!container) return;
 
   try {
@@ -22,37 +25,56 @@ async function renderStats() {
     const data = await res.json();
 
     container.innerHTML = data.items.map(item => `
-      <div class="stats__item">
-        <div class="stats__icon" aria-hidden="true">${item.icon}</div>
-        <div class="stats__value"
-             data-target="${item.value}"
-             data-prefix="${item.prefix || ''}"
-             data-suffix="${item.suffix || ''}">
-          ${item.prefix || ''}0${item.suffix || ''}
+      <div class="hero__trust-item">
+        <span class="hero__trust-icon" aria-hidden="true">${item.icon}</span>
+        <div>
+          <div class="hero__trust-value"
+               data-target="${item.value}"
+               data-prefix="${item.prefix || ''}"
+               data-suffix="${item.suffix || ''}">
+            ${item.prefix || ''}0${item.suffix || ''}
+          </div>
+          <div class="hero__trust-label">${item.label}</div>
         </div>
-        <div class="stats__label">${item.label}</div>
       </div>
     `).join('');
 
-    // 进入视口后启动数字滚动
     observeAndAnimate();
   } catch (err) {
-    console.error('[home] 渲染数字成就失败：', err);
-    container.innerHTML = `
-      <p style="grid-column: 1/-1; text-align:center; opacity:0.8;">
-        数据加载中…
-      </p>`;
+    console.error('[home] 渲染信任条失败：', err);
+    container.style.display = 'none';
   }
 }
 
-/**
- * 数字滚动动画（首次进入视口时触发）
- */
+/* ============ 精选商品 ============ */
+async function renderFeaturedProducts() {
+  const container = document.querySelector('[data-featured-grid]');
+  if (!container) return;
+
+  try {
+    const res = await fetch('data/products.json');
+    if (!res.ok) throw new Error('products.json 加载失败');
+    const data = await res.json();
+
+    const featured = data.items.filter(p => p.featured).slice(0, 4);
+    if (featured.length === 0) {
+      container.innerHTML = '<p style="text-align:center;color:var(--color-text-muted);">暂无精选商品</p>';
+      return;
+    }
+
+    // 首页：fromSubpage = false
+    container.innerHTML = featured.map(p => renderProductCardWithBase(p, false)).join('');
+  } catch (err) {
+    console.error('[home] 渲染精选商品失败：', err);
+    container.innerHTML = '<p style="text-align:center;color:var(--color-text-muted);">商品加载失败</p>';
+  }
+}
+
+/* ============ 数字滚动 ============ */
 function observeAndAnimate() {
   const targets = document.querySelectorAll('[data-target]');
   if (!targets.length) return;
 
-  // 尊重动画偏好
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) {
     targets.forEach(el => {
@@ -74,17 +96,12 @@ function observeAndAnimate() {
   targets.forEach(el => io.observe(el));
 }
 
-/**
- * 数字滚动效果（约 1.6s）
- */
 function animateCount(el) {
   const target = Number(el.dataset.target);
   const prefix = el.dataset.prefix || '';
   const suffix = el.dataset.suffix || '';
-  const duration = 1600;
+  const duration = 1400;
   const start = performance.now();
-
-  // easeOutCubic
   const ease = (t) => 1 - Math.pow(1 - t, 3);
 
   const tick = (now) => {
@@ -98,51 +115,6 @@ function animateCount(el) {
   requestAnimationFrame(tick);
 }
 
-/**
- * 千分位格式化
- */
 function formatNumber(num) {
   return num.toLocaleString('zh-CN');
 }
-/**
- * 小山设计社 · 全局入口
- * @module main
- */
-
-import { initNavigation } from './modules/navigation.js';
-import { initHome }       from './modules/home.js';
-
-// —— 字体加载完成后添加类 ——
-if ('fonts' in document) {
-  Promise.all([
-    document.fonts.load('1em "LXGW WenKai"'),
-    document.fonts.load('1em "Manrope"')
-  ]).then(() => {
-    document.documentElement.classList.add('fonts-loaded');
-  }).catch(() => {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-}
-
-const ready = (fn) => {
-  if (document.readyState !== 'loading') {
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-};
-
-ready(() => {
-  initNavigation();
-
-  // 仅首页执行
-  if (document.body.dataset.page === 'home') {
-    initHome();
-  }
-
-  document.querySelectorAll('[data-current-year]').forEach(el => {
-    el.textContent = new Date().getFullYear();
-  });
-
-  console.log('🏔️ 小山设计社 · 网站启动');
-});

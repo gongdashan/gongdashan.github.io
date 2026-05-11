@@ -1,0 +1,144 @@
+{
+  "_说明": "商品数据。维护方式：复制一个 item 对象，修改字段即可。图片放在 assets/images/products/ 下。",
+  "lastUpdated": "2026-05-07",
+  "currency": "CNY",
+  "categories": [
+    { "key": "all",      "label": "全部" },
+    { "key": "toy",      "label": "玩具类" },
+    { "key": "clothing", "label": "服装类" },
+    { "key": "bag",      "label": "包" },
+    { "key": "cup",      "label": "杯子" },
+    { "key": "other",    "label": "其它" }
+  ],
+  "items": [
+    {
+  "id": "p01",
+  "name": "纪念小熊",
+  "category": "toy",
+  "price": 88,
+  "images": ["assets/images/products/p01-1.jpg"],
+  "story": "首次义卖Cover Boy",
+  "stock": "in-stock",
+  "featured": true
+},
+    {
+      "id": "p02",
+      "name": "小山治愈玩偶",
+      "category": "toy",
+      "price": 128,
+      "images": ["assets/images/products/placeholder.svg"],
+      "story": "陪伴孩子度过漫长治疗时光的小伙伴。",
+      "stock": "in-stock",
+      "featured": true
+    },
+    {
+      "id": "p03",
+      "name": "纸飞机摇铃",
+      "category": "toy",
+      "price": 58,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p04",
+      "name": "山形棉麻 T 恤",
+      "category": "clothing",
+      "price": 168,
+      "images": ["assets/images/products/placeholder.svg"],
+      "story": "胸前一座小山，山顶一颗心。",
+      "stock": "in-stock",
+      "featured": true
+    },
+    {
+      "id": "p05",
+      "name": "暖橘卫衣",
+      "category": "clothing",
+      "price": 268,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p06",
+      "name": "印花手作围裙",
+      "category": "clothing",
+      "price": 128,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "low-stock"
+    },
+    {
+      "id": "p07",
+      "name": "原创帆布托特包",
+      "category": "bag",
+      "price": 98,
+      "images": ["assets/images/products/placeholder.svg"],
+      "story": "一只装得下日常，也装得下心意的包。",
+      "stock": "in-stock",
+      "featured": true
+    },
+    {
+      "id": "p08",
+      "name": "小山图案束口袋",
+      "category": "bag",
+      "price": 48,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p09",
+      "name": "EDC 小工具收纳包",
+      "category": "bag",
+      "price": 78,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p10",
+      "name": "山形手绘陶瓷杯",
+      "category": "cup",
+      "price": 88,
+      "images": ["assets/images/products/placeholder.svg"],
+      "story": "每一只都由设计师手绘，没有完全相同的两只。",
+      "stock": "in-stock"
+    },
+    {
+      "id": "p11",
+      "name": "双层玻璃随行杯",
+      "category": "cup",
+      "price": 128,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p12",
+      "name": "暖橘马克杯套装",
+      "category": "cup",
+      "price": 168,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "low-stock"
+    },
+    {
+      "id": "p13",
+      "name": "小山贴纸盲盒",
+      "category": "other",
+      "price": 28,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p14",
+      "name": "公益主题明信片",
+      "category": "other",
+      "price": 38,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p15",
+      "name": "限定版徽章三件套",
+      "category": "other",
+      "price": 58,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "out-of-stock"
+    }
+  ]
+}
