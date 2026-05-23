@@ -2,7 +2,7 @@
    组件库：按钮、导航、页脚等
    ============================================ */
 
-@layer components {
+@layer components {   
 
   /* ============================================
      🔘 按钮系统
@@ -372,6 +372,58 @@
     50%      { transform: scale(1.15); }
   }
 
+}/* ============================================
+   ⭐ 系列徽章（仅杯子等有 series 的商品显示）
+   ============================================ */
+.product-card__series {
+  display: inline-block;
+  padding: 2px var(--space-3);
+  margin-bottom: var(--space-2);
+  background-color: var(--color-bg-soft);
+  color: var(--color-primary-deep);
+  border: 1px solid var(--color-primary-soft);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   📝 商品副标题
+   ============================================ */
+.product-card__subtitle {
+  font-size: var(--fs-sm);
+  color: var(--color-text-soft);
+  margin: 0;
+  line-height: var(--lh-snug);
+}
+
+/* ============================================
+   🌸 筛选条 · 当前分类的小诗
+   ============================================ */
+.filter-poem {
+  text-align: center;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-7);
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  color: var(--color-text-soft);
+  letter-spacing: 0.1em;
+  min-height: 1.6em;
+  /* 切换时的淡入效果 */
+  animation: poemFadeIn var(--duration-normal) var(--ease-out);
+}
+
+.filter-poem::before,
+.filter-poem::after {
+  content: "—";
+  margin-inline: var(--space-3);
+  color: var(--color-primary-soft);
+}
+
+@keyframes poemFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 /* ============================================
    🏷️ 徽章（库存状态用）

@@ -1,9 +1,7 @@
 /**
  * 商品列表页模块
  * - 加载 products.json
- * - 渲染商品卡片网格
- * - 分类筛选（按 category）
- * - 筛选状态写入 URL hash（便于分享/刷新保持）
+ * - 渲染分类筛选 + 小诗 + 商品卡片网格
  * @module shop
  */
 
@@ -18,7 +16,6 @@ export async function initShop() {
   if (!grid) return;
 
   try {
-    // 子页面 fetch 路径需指向上一级
     const res = await fetch('../data/products.json');
     if (!res.ok) throw new Error('products.json 加载失败');
     const data = await res.json();
@@ -28,11 +25,12 @@ export async function initShop() {
     renderFilters();
     applyFilterFromHash();
     renderGrid();
+    renderPoem();
 
-    // hash 变化时同步筛选（浏览器前进/后退）
     window.addEventListener('hashchange', () => {
       applyFilterFromHash();
       renderGrid();
+      renderPoem();
     });
   } catch (err) {
     console.error('[shop] 加载失败：', err);
@@ -44,9 +42,6 @@ export async function initShop() {
   }
 }
 
-/**
- * 从 URL hash 读取当前筛选
- */
 function applyFilterFromHash() {
   const hash = window.location.hash.replace('#', '');
   const validKeys = categories.map(c => c.key);
@@ -54,9 +49,6 @@ function applyFilterFromHash() {
   syncFilterButtons();
 }
 
-/**
- * 渲染分类筛选按钮
- */
 function renderFilters() {
   const filterBar = document.querySelector('[data-filter-bar]');
   if (!filterBar) return;
@@ -77,7 +69,6 @@ function renderFilters() {
     `;
   }).join('');
 
-  // 绑定点击事件
   filterBar.addEventListener('click', (e) => {
     const btn = e.target.closest('.filter-chip');
     if (!btn) return;
@@ -85,16 +76,13 @@ function renderFilters() {
     if (key === currentFilter) return;
 
     currentFilter = key;
-    // 写入 hash（不触发跳转，但浏览器可前进/后退）
     history.replaceState(null, '', key === 'all' ? location.pathname : `#${key}`);
     syncFilterButtons();
     renderGrid();
+    renderPoem();
   });
 }
 
-/**
- * 同步按钮高亮状态
- */
 function syncFilterButtons() {
   document.querySelectorAll('.filter-chip').forEach(btn => {
     const isActive = btn.dataset.filter === currentFilter;
@@ -104,8 +92,23 @@ function syncFilterButtons() {
 }
 
 /**
- * 渲染商品网格
+ * 渲染当前分类下的小诗
  */
+function renderPoem() {
+  const poemEl = document.querySelector('[data-filter-poem]');
+  if (!poemEl) return;
+
+  const cat = categories.find(c => c.key === currentFilter);
+  const poem = cat?.poem || '';
+
+  // 重新触发动画：先清空 class，再添加
+  poemEl.textContent = poem;
+  poemEl.style.animation = 'none';
+  // eslint-disable-next-line no-unused-expressions
+  poemEl.offsetHeight; // 触发重排
+  poemEl.style.animation = '';
+}
+
 function renderGrid() {
   const grid = document.querySelector('[data-products-grid]');
   const empty = document.querySelector('[data-empty-state]');
