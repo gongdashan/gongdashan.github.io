@@ -1,269 +1,144 @@
 {
-  "meta": {
-    "version": "1.0.0",
-    "lastUpdated": "2026-05-23",
-    "currency": "CNY",
-    "currencySymbol": "¥"
-  },
+  "_说明": "商品数据。维护方式：复制一个 item 对象，修改字段即可。图片放在 assets/images/products/ 下。",
+  "lastUpdated": "2026-05-07",
+  "currency": "CNY",
   "categories": [
-    {
-      "id": "toy",
-      "name": "玩具",
-      "tagline": "谁还不是个孩子",
-      "description": "藏在心底的童心，需要一点点温柔的提醒。",
-      "icon": "🧸",
-      "order": 1
-    },
-    {
-      "id": "cup",
-      "name": "杯子",
-      "tagline": "每天都要吨吨",
-      "description": "好好喝水，是对自己最日常的偏爱。",
-      "icon": "🥤",
-      "order": 2
-    },
-    {
-      "id": "bag",
-      "name": "包袋",
-      "tagline": "装下出门的小快乐",
-      "description": "带着喜欢的东西出门，路就不那么远了。",
-      "icon": "👜",
-      "order": 3
-    },
-    {
-      "id": "stationery",
-      "name": "文具",
-      "tagline": "灵感偷偷发芽",
-      "description": "笔尖落下的那一刻，世界悄悄变得柔软。",
-      "icon": "✏️",
-      "order": 4
-    },
-    {
-      "id": "other",
-      "name": "其他",
-      "tagline": "还有一些温柔的小事",
-      "description": "生活里那些说不上名字，却让人想要珍藏的小物。",
-      "icon": "🌿",
-      "order": 5
-    }
+    { "key": "all",      "label": "全部" },
+    { "key": "toy",      "label": "玩具类" },
+    { "key": "clothing", "label": "服装类" },
+    { "key": "bag",      "label": "包" },
+    { "key": "cup",      "label": "杯子" },
+    { "key": "other",    "label": "其它" }
   ],
-  "products": [
+  "items": [
     {
-      "id": "p01",
-      "name": "登山小熊保温杯",
-      "subtitle": "陶瓷内胆 · 喜式系列",
-      "category": "cup",
-      "series": "喜式",
-      "price": 128,
-      "originalPrice": 168,
-      "currency": "CNY",
-      "stock": "in_stock",
-      "stockLabel": "现货",
-      "featured": true,
-      "isNew": false,
-      "tags": ["保温杯", "陶瓷内胆", "出口品质", "喜式"],
-      "colors": [
-        {
-          "name": "登山红",
-          "hex": "#C0392B",
-          "available": true
-        }
-      ],
-      "specs": {
-        "容量": "350ml",
-        "材质": "316不锈钢 + 陶瓷内胆",
-        "保温时长": "12小时",
-        "尺寸": "7 × 7 × 21 cm",
-        "重量": "320g"
-      },
-      "images": [
-        {
-          "src": "assets/images/products/p01-1.jpg",
-          "alt": "登山小熊保温杯-红色-正面"
-        },
-        {
-          "src": "assets/images/products/p01-2.jpg",
-          "alt": "登山小熊保温杯-红色-侧面"
-        }
-      ],
-      "thumbnail": "assets/images/products/p01-1.jpg",
-      "description": "一只背着小包去登山的熊，提醒你每一次出门都值得期待。陶瓷内胆守护每一口水的纯净，喜式品牌出口级品质。",
-      "story": "灵感来自每个想去远方的清晨。带上它，仿佛口袋里就装着一座小小的山。",
-      "donation": {
-        "enabled": true,
-        "percentage": 20,
-        "note": "每售出一件，将向白血病及肾病患儿家庭捐赠 ¥25"
-      }
-    },
+  "id": "p01",
+  "name": "纪念小熊",
+  "category": "toy",
+  "price": 88,
+  "images": ["assets/images/products/p01-1.jpg"],
+  "story": "首次义卖Cover Boy",
+  "stock": "in-stock",
+  "featured": true
+},
     {
       "id": "p02",
-      "name": "山水画意保温杯",
-      "subtitle": "陶瓷内胆 · 喜式系列",
-      "category": "cup",
-      "series": "喜式",
-      "price": 138,
-      "originalPrice": 178,
-      "currency": "CNY",
-      "stock": "in_stock",
-      "stockLabel": "现货",
-      "featured": true,
-      "isNew": true,
-      "tags": ["保温杯", "陶瓷内胆", "国风", "喜式"],
-      "colors": [
-        {
-          "name": "墨青",
-          "hex": "#2C5F5D",
-          "available": true
-        }
-      ],
-      "specs": {
-        "容量": "400ml",
-        "材质": "316不锈钢 + 陶瓷内胆",
-        "保温时长": "12小时",
-        "尺寸": "7.5 × 7.5 × 22 cm",
-        "重量": "350g"
-      },
-      "images": [
-        {
-          "src": "assets/images/products/p02-1.jpg",
-          "alt": "山水画意保温杯-墨青-正面"
-        }
-      ],
-      "thumbnail": "assets/images/products/p02-1.jpg",
-      "description": "杯身绘有淡淡山水，像把一幅小画带在身边。陶瓷内胆呵护每一口温润，让喝水也成为一种留白。",
-      "story": "山在远方，茶在手边。慢一点，也很好。",
-      "donation": {
-        "enabled": true,
-        "percentage": 20,
-        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥27"
-      }
+      "name": "小山治愈玩偶",
+      "category": "toy",
+      "price": 128,
+      "images": ["assets/images/products/placeholder.svg"],
+      "story": "陪伴孩子度过漫长治疗时光的小伙伴。",
+      "stock": "in-stock",
+      "featured": true
     },
     {
       "id": "p03",
-      "name": "C-logo 记忆咖啡杯",
-      "subtitle": "C-logo 记忆系列",
-      "category": "cup",
-      "series": "C-logo",
-      "price": 88,
-      "originalPrice": 108,
-      "currency": "CNY",
-      "stock": "in_stock",
-      "stockLabel": "现货",
-      "featured": true,
-      "isNew": false,
-      "tags": ["咖啡杯", "陶瓷", "C-logo", "记忆系列"],
-      "colors": [
-        {
-          "name": "奶白",
-          "hex": "#F5EFE6",
-          "available": true
-        }
-      ],
-      "specs": {
-        "容量": "300ml",
-        "材质": "骨瓷",
-        "尺寸": "8 × 8 × 9 cm",
-        "重量": "280g",
-        "适用": "微波炉 / 洗碗机"
-      },
-      "images": [
-        {
-          "src": "assets/images/products/p03-1.jpg",
-          "alt": "C-logo 记忆咖啡杯-奶白"
-        }
-      ],
-      "thumbnail": "assets/images/products/p03-1.jpg",
-      "description": "握在手心刚刚好的弧度，杯身印着低调的 C-logo。一杯咖啡，是早晨第一句问候。",
-      "story": "记忆系列，是想把那些被咖啡香叫醒的早晨，慢慢收藏起来。",
-      "donation": {
-        "enabled": true,
-        "percentage": 20,
-        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥17"
-      }
+      "name": "纸飞机摇铃",
+      "category": "toy",
+      "price": 58,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
     },
     {
       "id": "p04",
-      "name": "C-logo 记忆茶杯",
-      "subtitle": "C-logo 记忆系列",
-      "category": "cup",
-      "series": "C-logo",
-      "price": 78,
-      "originalPrice": 98,
-      "currency": "CNY",
-      "stock": "in_stock",
-      "stockLabel": "现货",
-      "featured": false,
-      "isNew": false,
-      "tags": ["茶杯", "陶瓷", "C-logo", "记忆系列"],
-      "colors": [
-        {
-          "name": "米白",
-          "hex": "#F0E8D8",
-          "available": true
-        }
-      ],
-      "specs": {
-        "容量": "220ml",
-        "材质": "骨瓷",
-        "尺寸": "7 × 7 × 8 cm",
-        "重量": "220g",
-        "适用": "微波炉 / 洗碗机"
-      },
-      "images": [
-        {
-          "src": "assets/images/products/p04-1.jpg",
-          "alt": "C-logo 记忆茶杯-米白"
-        }
-      ],
-      "thumbnail": "assets/images/products/p04-1.jpg",
-      "description": "比咖啡杯小一号，刚好盛下一盏好茶。杯壁薄而温润，像一句轻轻的问候。",
-      "story": "茶要慢慢喝，话要慢慢说。这只小杯，陪你慢下来。",
-      "donation": {
-        "enabled": true,
-        "percentage": 20,
-        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥15"
-      }
+      "name": "山形棉麻 T 恤",
+      "category": "clothing",
+      "price": 168,
+      "images": ["assets/images/products/placeholder.svg"],
+      "story": "胸前一座小山，山顶一颗心。",
+      "stock": "in-stock",
+      "featured": true
     },
     {
       "id": "p05",
-      "name": "小熊钥匙扣",
-      "subtitle": "随身的小伙伴",
+      "name": "暖橘卫衣",
+      "category": "clothing",
+      "price": 268,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p06",
+      "name": "印花手作围裙",
+      "category": "clothing",
+      "price": 128,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "low-stock"
+    },
+    {
+      "id": "p07",
+      "name": "原创帆布托特包",
+      "category": "bag",
+      "price": 98,
+      "images": ["assets/images/products/placeholder.svg"],
+      "story": "一只装得下日常，也装得下心意的包。",
+      "stock": "in-stock",
+      "featured": true
+    },
+    {
+      "id": "p08",
+      "name": "小山图案束口袋",
+      "category": "bag",
+      "price": 48,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p09",
+      "name": "EDC 小工具收纳包",
+      "category": "bag",
+      "price": 78,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p10",
+      "name": "山形手绘陶瓷杯",
+      "category": "cup",
+      "price": 88,
+      "images": ["assets/images/products/placeholder.svg"],
+      "story": "每一只都由设计师手绘，没有完全相同的两只。",
+      "stock": "in-stock"
+    },
+    {
+      "id": "p11",
+      "name": "双层玻璃随行杯",
+      "category": "cup",
+      "price": 128,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p12",
+      "name": "暖橘马克杯套装",
+      "category": "cup",
+      "price": 168,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "low-stock"
+    },
+    {
+      "id": "p13",
+      "name": "小山贴纸盲盒",
       "category": "other",
-      "series": null,
+      "price": 28,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p14",
+      "name": "公益主题明信片",
+      "category": "other",
       "price": 38,
-      "originalPrice": 48,
-      "currency": "CNY",
-      "stock": "in_stock",
-      "stockLabel": "现货",
-      "featured": true,
-      "isNew": true,
-      "tags": ["钥匙扣", "挂件", "小熊", "周边"],
-      "colors": [
-        {
-          "name": "焦糖棕",
-          "hex": "#A0522D",
-          "available": true
-        }
-      ],
-      "specs": {
-        "材质": "PVC + 合金扣",
-        "尺寸": "5 × 4 cm",
-        "重量": "25g"
-      },
-      "images": [
-        {
-          "src": "assets/images/products/p05-1.jpg",
-          "alt": "小熊钥匙扣-焦糖棕"
-        }
-      ],
-      "thumbnail": "assets/images/products/p05-1.jpg",
-      "description": "一只小小的熊，挂在钥匙、书包或者你愿意的任何地方。它不会说话，但每次看到都会想笑。",
-      "story": "希望你出门的每一次，都有一个小小的'我陪你'。",
-      "donation": {
-        "enabled": true,
-        "percentage": 20,
-        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥7"
-      }
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "in-stock"
+    },
+    {
+      "id": "p15",
+      "name": "限定版徽章三件套",
+      "category": "other",
+      "price": 58,
+      "images": ["assets/images/products/placeholder.svg"],
+      "stock": "out-of-stock"
     }
   ]
 }

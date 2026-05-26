@@ -56,7 +56,7 @@ async function renderFeaturedProducts() {
     if (!res.ok) throw new Error('products.json 加载失败');
     const data = await res.json();
 
-    const featured = data.items.filter(p => p.featured).slice(0, 8);
+    const featured = data.items.filter(p => p.featured).slice(0, 4);
     if (featured.length === 0) {
       container.innerHTML = '<p style="text-align:center;color:var(--color-text-muted);">暂无精选商品</p>';
       return;
