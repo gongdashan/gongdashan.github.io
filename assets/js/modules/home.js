@@ -51,22 +51,28 @@ async function renderFeaturedProducts() {
   const container = document.querySelector('[data-featured-grid]');
   if (!container) return;
 
+  container.setAttribute('aria-busy', 'true');
+
   try {
     const res = await fetch('data/products.json');
     if (!res.ok) throw new Error('products.json 加载失败');
     const data = await res.json();
 
-    const featured = data.items.filter(p => p.featured).slice(0, 4);
+    const list = data.items || data.products || [];
+    const featured = list.filter(p => p.featured).slice(0, 4);
     if (featured.length === 0) {
       container.innerHTML = '<p style="text-align:center;color:var(--color-text-muted);">暂无精选商品</p>';
+      container.setAttribute('aria-busy', 'false');
       return;
     }
 
     // 首页：fromSubpage = false
     container.innerHTML = featured.map(p => renderProductCardWithBase(p, false)).join('');
+    container.setAttribute('aria-busy', 'false');
   } catch (err) {
     console.error('[home] 渲染精选商品失败：', err);
     container.innerHTML = '<p style="text-align:center;color:var(--color-text-muted);">商品加载失败</p>';
+    container.setAttribute('aria-busy', 'false');
   }
 }
 

@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/pages.css">
   <link rel="stylesheet" href="../assets/css/utilities.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
 </head>
 
 <body data-page="shop">
@@ -47,9 +48,9 @@
             <ul class="site-nav__list" role="list">
               <li><a class="site-nav__link" href="../">首页</a></li>
               <li><a class="site-nav__link" href="shop.html">义卖商品</a></li>
-              <li><a class="site-nav__link" href="events.html">活动记录</a></li>
-              <li><a class="site-nav__link" href="donations.html">善款去向</a></li>
-              <li><a class="site-nav__link" href="about.html">关于我们</a></li>
+              <li><a class="site-nav__link" href="events.html">活动详情</a></li>
+              <li><a class="site-nav__link" href="contact.html">联系我们</a></li>
+              <li><a class="site-nav__link" href="volunteer.html">志愿者招募</a></li>
               <li class="site-nav__cta">
                 <a class="btn btn--primary btn--sm" href="contact.html">加入我们</a>
               </li>
@@ -95,17 +96,25 @@
           <!-- 分类筛选 -->
           <div class="filter-bar"
                data-filter-bar
+              id="price"
                role="group"
                aria-label="按分类筛选商品">
             <!-- JS 渲染 -->
           </div>
 
           <!-- 商品网格 -->
-          <div class="shop-grid" data-products-grid>
+          <div class="shop-grid" data-products-grid aria-live="polite" aria-busy="true">
             <p style="grid-column:1/-1; text-align:center; color:var(--color-text-muted); padding:var(--space-8) 0;">
               商品加载中…
             </p>
           </div>
+
+          <noscript>
+            <p style="margin-top:var(--space-4); color:var(--color-text-soft); text-align:center;">
+              当前页面的筛选与商品渲染需要 JavaScript。你仍可通过
+              <a href="contact.html">联系我们</a> 获取采购清单。
+            </p>
+          </noscript>
 
           <!-- 空状态（默认隐藏）-->
           <div class="empty-state" data-empty-state hidden>
@@ -135,8 +144,8 @@
             <ul class="site-footer__list" role="list">
               <li><a href="../">首页</a></li>
               <li><a href="shop.html">义卖商品</a></li>
-              <li><a href="events.html">活动记录</a></li>
-              <li><a href="donations.html">善款去向</a></li>
+              <li><a href="events.html">活动详情</a></li>
+              <li><a href="contact.html">联系我们</a></li>
             </ul>
           </div>
 
@@ -144,8 +153,8 @@
             <h3 class="site-footer__title">参与我们</h3>
             <ul class="site-footer__list" role="list">
               <li><a href="about.html">关于我们</a></li>
-              <li><a href="contact.html">联系我们</a></li>
-              <li><a href="contact.html">成为志愿者</a></li>
+              <li><a href="volunteer.html">成为志愿者</a></li>
+              <li><a href="contact.html">商务采购咨询</a></li>
               <li><a href="contact.html">企业合作</a></li>
             </ul>
           </div>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#E87A5D">
+  <title>联系我们 · 小山设计社</title>
+  <meta name="description" content="企业采购与合作联系页面。">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/utilities.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body data-page="contact">
+  <a href="#main" class="skip-link">跳到主要内容</a>
+
+  <div class="page-wrapper">
+    <header class="site-header" role="banner">
+      <div class="container">
+        <div class="site-header__inner">
+          <a href="../" class="site-header__logo" aria-label="小山设计社首页">
+            <img src="../assets/icons/logo.svg" alt="小山设计社" width="240" height="64">
+          </a>
+
+          <nav class="site-nav" id="site-nav" aria-label="主导航">
+            <ul class="site-nav__list" role="list">
+              <li><a class="site-nav__link" href="../">首页</a></li>
+              <li><a class="site-nav__link" href="shop.html">义卖商品</a></li>
+              <li><a class="site-nav__link" href="events.html">活动详情</a></li>
+              <li><a class="site-nav__link" href="contact.html">联系我们</a></li>
+              <li><a class="site-nav__link" href="volunteer.html">志愿者招募</a></li>
+              <li class="site-nav__cta"><a class="btn btn--primary btn--sm" href="contact.html">加入我们</a></li>
+            </ul>
+          </nav>
+
+          <button type="button" class="site-header__toggle" aria-controls="site-nav" aria-expanded="false" aria-label="打开菜单">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7"/>
+              <line x1="4" y1="12" x2="20" y2="12"/>
+              <line x1="4" y1="17" x2="20" y2="17"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main" role="main">
+      <section class="section" aria-labelledby="contact-title">
+        <div class="container">
+          <h1 id="contact-title">联系我们</h1>
+          <p class="contact-lede">
+            用于企业礼品采购、活动批量采购与合作沟通。你可以直接提交表单，我们会尽快回复。
+          </p>
+
+          <div class="contact-layout">
+            <article class="contact-card" aria-label="联系方式">
+              <h2>联系信息</h2>
+              <ul class="contact-list" role="list">
+                <li><span>邮箱</span><strong>hello@xiaoshan.org</strong></li>
+                <li><span>微信</span><strong>xiaoshan_design</strong></li>
+                <li><span>咨询方向</span><strong>礼品采购、活动合作、定制方案</strong></li>
+              </ul>
+
+              <p class="contact-tips">
+                建议在咨询中写明预算区间、数量和使用场景，我们能更快给到选品建议。
+              </p>
+            </article>
+
+            <article class="contact-card" aria-label="采购咨询表单">
+              <h2>采购咨询表单</h2>
+              <p class="contact-form-note">
+                无后端方案：当前使用 Formspree。你只需要把 action 地址替换成自己的表单地址即可上线接收消息。
+              </p>
+
+              <form class="contact-form"
+                    action="https://formspree.io/f/your-form-id"
+                    method="POST">
+                <div class="form-row">
+                  <label for="name">联系人姓名</label>
+                  <input id="name" name="name" type="text" required autocomplete="name" placeholder="例如：王女士">
+                </div>
+
+                <div class="form-row">
+                  <label for="company">公司/组织名称</label>
+                  <input id="company" name="company" type="text" autocomplete="organization" placeholder="例如：某某科技有限公司">
+                </div>
+
+                <div class="form-row form-row--split">
+                  <div>
+                    <label for="email">邮箱</label>
+                    <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+                  </div>
+                  <div>
+                    <label for="phone">手机号</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="用于快速联系">
+                  </div>
+                </div>
+
+                <div class="form-row form-row--split">
+                  <div>
+                    <label for="quantity">预计数量</label>
+                    <input id="quantity" name="quantity" type="number" min="1" step="1" placeholder="例如：100">
+                  </div>
+                  <div>
+                    <label for="budget">预算区间（元）</label>
+                    <select id="budget" name="budget">
+                      <option value="">请选择</option>
+                      <option value="under-100">100元以下</option>
+                      <option value="100-200">100-200元</option>
+                      <option value="200-500">200-500元</option>
+                      <option value="500+">500元以上</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <label for="message">需求说明</label>
+                  <textarea id="message" name="message" rows="5" required placeholder="请描述使用场景、期望风格、交付时间等"></textarea>
+                </div>
+
+                <div class="form-row form-row--consent">
+                  <input id="consent" name="consent" type="checkbox" required>
+                  <label for="consent">我同意提交以上信息用于联系与采购沟通。</label>
+                </div>
+
+                <button class="btn btn--primary" type="submit">提交咨询</button>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="site-footer__top">
+          <div>
+            <h3 class="site-footer__title">了解我们</h3>
+            <ul class="site-footer__list" role="list">
+              <li><a href="about.html">关于我们</a></li>
+              <li><a href="shop.html">义卖商品</a></li>
+              <li><a href="events.html">活动详情</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p>© <span data-current-year>2026</span> 小山设计社</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

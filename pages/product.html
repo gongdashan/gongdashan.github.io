@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#E87A5D">
+
+  <title>商品详情 · 小山设计社</title>
+  <meta name="description" content="小山设计社商品详情模板页面，用于展示商品图片、价格、规格与采购说明。">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/utilities.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+
+<body data-page="product-detail">
+  <a href="#main" class="skip-link">跳到主要内容</a>
+
+  <div class="page-wrapper">
+    <header class="site-header" role="banner">
+      <div class="container">
+        <div class="site-header__inner">
+          <a href="../" class="site-header__logo" aria-label="小山设计社首页">
+            <img src="../assets/icons/logo.svg" alt="小山设计社" width="240" height="64">
+          </a>
+
+          <nav class="site-nav" id="site-nav" aria-label="主导航">
+            <ul class="site-nav__list" role="list">
+              <li><a class="site-nav__link" href="../">首页</a></li>
+              <li><a class="site-nav__link" href="shop.html">义卖商品</a></li>
+              <li><a class="site-nav__link" href="events.html">活动详情</a></li>
+              <li><a class="site-nav__link" href="contact.html">联系我们</a></li>
+              <li><a class="site-nav__link" href="volunteer.html">志愿者招募</a></li>
+              <li class="site-nav__cta">
+                <a class="btn btn--primary btn--sm" href="contact.html">加入我们</a>
+              </li>
+            </ul>
+          </nav>
+
+          <button type="button" class="site-header__toggle" aria-controls="site-nav" aria-expanded="false" aria-label="打开菜单">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7"/>
+              <line x1="4" y1="12" x2="20" y2="12"/>
+              <line x1="4" y1="17" x2="20" y2="17"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main" role="main">
+      <section class="detail-hero section" aria-labelledby="detail-title">
+        <div class="container">
+          <nav class="detail-breadcrumb" aria-label="面包屑">
+            <a href="../">首页</a>
+            <span aria-hidden="true">/</span>
+            <a href="shop.html">义卖商品</a>
+            <span aria-hidden="true">/</span>
+            <span>商品详情</span>
+          </nav>
+
+          <div class="detail-layout">
+            <article class="detail-media" aria-label="商品图片区">
+              <img src="../assets/images/products/p01-1.jpg" alt="商品示意图" width="960" height="960">
+            </article>
+
+            <article class="detail-info">
+              <p class="detail-kicker">商品详情模板（静态）</p>
+              <h1 id="detail-title">登山小熊保温杯（示例）</h1>
+              <p class="detail-price">¥128</p>
+
+              <p class="detail-desc">
+                本页面是 Step 5 的商品详情静态模板。当前先使用示例内容，后续可按同一结构替换为真实商品信息。
+              </p>
+
+              <ul class="detail-specs" role="list" aria-label="商品规格">
+                <li><span>商品编号</span><strong data-product-id>模板示例</strong></li>
+                <li><span>分类</span><strong>杯子</strong></li>
+                <li><span>容量</span><strong>350ml</strong></li>
+                <li><span>材质</span><strong>316不锈钢 + 陶瓷内胆</strong></li>
+              </ul>
+
+              <p class="detail-note" data-product-note>
+                当前查看商品详情模板。你可以继续浏览其它商品并发起采购咨询。
+              </p>
+
+              <div class="detail-actions">
+                <a class="btn btn--primary" href="contact.html">提交采购咨询</a>
+                <a class="btn btn--secondary" href="shop.html">返回商品列表</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="site-footer__bottom">
+          <p>
+            © <span data-current-year>2026</span> 小山设计社 ·
+            用 <span class="site-footer__heart" aria-hidden="true">❤</span> 制作
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

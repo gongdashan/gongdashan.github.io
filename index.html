@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
 
   <!-- ========== JSON-LD 结构化数据（SEO 增强）========== -->
   <script type="application/ld+json">
@@ -84,9 +85,9 @@
             <ul class="site-nav__list" role="list">
               <li><a class="site-nav__link" href="/">首页</a></li>
               <li><a class="site-nav__link" href="pages/shop.html">义卖商品</a></li>
-              <li><a class="site-nav__link" href="pages/events.html">活动记录</a></li>
-              <li><a class="site-nav__link" href="pages/donations.html">善款去向</a></li>
-              <li><a class="site-nav__link" href="pages/about.html">关于我们</a></li>
+              <li><a class="site-nav__link" href="pages/events.html">活动详情</a></li>
+              <li><a class="site-nav__link" href="pages/contact.html">联系我们</a></li>
+              <li><a class="site-nav__link" href="pages/volunteer.html">志愿者招募</a></li>
               <li class="site-nav__cta">
                 <a class="btn btn--primary btn--sm" href="pages/contact.html">加入我们</a>
               </li>
@@ -123,11 +124,14 @@
       <section class="hero" aria-labelledby="hero-title">
         <!-- 手绘装饰（精简至 3 个） -->
         <img class="hero__decoration hero__decoration--cloud"
-             src="assets/decorations/cloud.svg" alt="" aria-hidden="true">
+             src="assets/decorations/cloud.svg" alt="" aria-hidden="true"
+             width="100" height="60" loading="lazy" decoding="async" fetchpriority="low">
         <img class="hero__decoration hero__decoration--sun"
-             src="assets/decorations/sun.svg" alt="" aria-hidden="true">
+             src="assets/decorations/sun.svg" alt="" aria-hidden="true"
+             width="76" height="76" loading="lazy" decoding="async" fetchpriority="low">
         <img class="hero__decoration hero__decoration--star"
-             src="assets/decorations/star.svg" alt="" aria-hidden="true">
+             src="assets/decorations/star.svg" alt="" aria-hidden="true"
+             width="28" height="28" loading="lazy" decoding="async" fetchpriority="low">
 
         <div class="container">
           <div class="hero__inner">
@@ -140,34 +144,46 @@
 
             <!-- 主标题 -->
             <h1 id="hero-title" class="hero__title fade-in-up delay-1">
-              让每一次<span class="hero__title-accent">拥有</span><br>
-              都更有意义
+              为每一份采购需求
+              找到更有温度的<span class="hero__title-accent">礼品方案</span>
             </h1>
 
+            <!-- 采购导向说明 -->
+            <p class="hero__lede fade-in-up delay-2">
+              面向企业礼品采购与活动批量采购，商品信息公开透明，支持快速筛选与对比。
+            </p>
+
             <!-- 英文金句 -->
-            <p class="hero__quote-en fade-in-up delay-2">
-              "Good things may take longer. The path still holds."
+            <p class="hero__quote-en fade-in-up delay-3">
+              "Browse fast. Compare clearly. Purchase confidently."
             </p>
 
             <!-- 中文意译 -->
-            <p class="hero__quote-cn fade-in-up delay-2">
-              美好需要时间，路一直都在
+            <p class="hero__quote-cn fade-in-up delay-3">
+              快速浏览，清晰对比，安心采购
             </p>
 
             <!-- 主 CTA -->
-            <div class="hero__actions fade-in-up delay-3">
+            <div class="hero__actions fade-in-up delay-4">
               <a href="pages/shop.html" class="btn btn--primary btn--lg">
                 🛍️ 浏览义卖商品
               </a>
-              <a href="pages/about.html" class="btn btn--secondary btn--lg">
-                了解我们的故事
+              <a href="pages/contact.html" class="btn btn--secondary btn--lg">
+                📦 咨询批量采购
               </a>
             </div>
 
+            <!-- 快捷入口 -->
+            <div class="hero__quick-links fade-in-up delay-4" aria-label="快捷筛选入口">
+              <a href="pages/shop.html#price">按价格筛选</a>
+              <a href="pages/shop.html#category">按类别筛选</a>
+              <a href="pages/shop.html#popular">查看热门商品</a>
+            </div>
+
             <!-- 信任条（数字成就降级版） -->
-            <div class="hero__trust fade-in-up delay-4"
+            <div class="hero__trust fade-in-up delay-5"
                  data-trust-bar
-                 aria-label="组织成就">
+                 aria-label="商品展示与活动数据">
               <!-- JS 动态渲染 -->
             </div>
 
@@ -178,33 +194,33 @@
       <!-- ========== 💛 使命陈述 ========== -->
       <section class="mission section" aria-labelledby="mission-title">
         <div class="container">
-          <h2 id="mission-title" class="mission__title">我们做什么</h2>
+          <h2 id="mission-title" class="mission__title">为什么选择我们</h2>
           <p class="mission__lede">
-            把每一份善意，变成可被孩子触摸的温度。
+            我们把“好看、好用、好采购”放在同一个页面里，帮助你更快做出礼品决策。
           </p>
 
           <div class="mission__grid">
             <article class="mission__card">
-              <div class="mission__icon" aria-hidden="true">💝</div>
-              <h3 class="mission__card-title">陪伴和温度</h3>
+              <div class="mission__icon" aria-hidden="true">🏷️</div>
+              <h3 class="mission__card-title">价格公开透明</h3>
               <p class="mission__card-desc">
-                不只是物质的援助，更是出现在他们身边的那份心意。
+                所有商品统一展示名称、主图与价格，采购方可快速横向比较。
               </p>
             </article>
 
             <article class="mission__card">
-              <div class="mission__icon" aria-hidden="true">🎒</div>
-              <h3 class="mission__card-title">Everyday Carry</h3>
+              <div class="mission__icon" aria-hidden="true">🧭</div>
+              <h3 class="mission__card-title">分类筛选清晰</h3>
               <p class="mission__card-desc">
-                把公益融进日常——一只杯子、一个包、一件玩具，都可以成为善意的载体。
+                支持按价格、类别与热门维度浏览，适配个人选购与批量选品场景。
               </p>
             </article>
 
             <article class="mission__card">
-              <div class="mission__icon" aria-hidden="true">🍃</div>
-              <h3 class="mission__card-title">公益轻盈自然</h3>
+              <div class="mission__icon" aria-hidden="true">🤝</div>
+              <h3 class="mission__card-title">采购沟通直接</h3>
               <p class="mission__card-desc">
-                我们不渲染苦难，只把美好的事，温柔地做下去。
+                提供联系入口对接采购需求，便于企业活动礼品与客户赠礼方案落地。
               </p>
             </article>
           </div>
@@ -217,12 +233,12 @@
           <header class="home-section__header">
             <h2 id="featured-products-title" class="home-section__title">精选义卖</h2>
             <p class="home-section__lede">
-              每一件商品背后，都是一份温柔的心意。
+              优先展示热门和高复购商品，帮助你快速完成第一轮选品。
             </p>
           </header>
 
           <!-- JS 渲染 4 件 featured 商品 -->
-          <div class="shop-grid" data-featured-grid>
+          <div class="shop-grid" data-featured-grid aria-live="polite" aria-busy="true">
             <p style="grid-column:1/-1; text-align:center; color:var(--color-text-muted); padding:var(--space-7) 0;">
               精选商品加载中…
             </p>
@@ -260,14 +276,13 @@
       <!-- ========== 🎯 底部 CTA 召唤区 ========== -->
       <section class="cta-banner" aria-labelledby="cta-title">
         <div class="container cta-banner__inner">
-          <h2 id="cta-title" class="cta-banner__title">让我们一起，做一件温柔的小事</h2>
+          <h2 id="cta-title" class="cta-banner__title">准备开始你的礼品采购清单？</h2>
           <p class="cta-banner__desc">
-            无论是购买一件义卖商品、参与一次活动，还是仅仅把我们告诉你身边的朋友——<br>
-            每一份善意都不会落空。
+            从浏览商品开始，按价格和类别快速筛选；如需批量采购，可直接联系我们获取建议方案。
           </p>
           <div class="cta-banner__actions">
-            <a href="pages/contact.html" class="btn btn--primary btn--lg">🤝 我想加入</a>
-            <a href="pages/donations.html" class="btn btn--secondary btn--lg">查看善款去向</a>
+            <a href="pages/shop.html" class="btn btn--primary btn--lg">🛍️ 立即查看商品</a>
+            <a href="pages/contact.html" class="btn btn--secondary btn--lg">💬 提交采购咨询</a>
           </div>
         </div>
       </section>
@@ -297,8 +312,8 @@
             <ul class="site-footer__list" role="list">
               <li><a href="/">首页</a></li>
               <li><a href="pages/shop.html">义卖商品</a></li>
-              <li><a href="pages/events.html">活动记录</a></li>
-              <li><a href="pages/donations.html">善款去向</a></li>
+              <li><a href="pages/events.html">活动详情</a></li>
+              <li><a href="pages/contact.html">联系我们</a></li>
             </ul>
           </div>
 
@@ -307,8 +322,8 @@
             <h3 class="site-footer__title">参与我们</h3>
             <ul class="site-footer__list" role="list">
               <li><a href="pages/about.html">关于我们</a></li>
-              <li><a href="pages/contact.html">联系我们</a></li>
-              <li><a href="pages/contact.html">成为志愿者</a></li>
+              <li><a href="pages/volunteer.html">成为志愿者</a></li>
+              <li><a href="pages/contact.html">商务采购咨询</a></li>
               <li><a href="pages/contact.html">企业合作</a></li>
             </ul>
           </div>

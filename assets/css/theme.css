@@ -1,0 +1,65 @@
+/* ============================================
+   主题层：深色模式与主题切换
+   - 默认跟随系统（prefers-color-scheme）
+   - 用户手动切换时使用 html[data-theme]
+   ============================================ */
+
+@layer theme {
+  :root {
+    color-scheme: light dark;
+  }
+
+  /* 系统深色偏好（仅在未手动设置时生效） */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --color-bg: #151a1d;
+      --color-bg-soft: #1c2328;
+      --color-bg-card: #202a31;
+
+      --color-text: #ebf1f2;
+      --color-text-soft: #b6c2c6;
+      --color-text-muted: #8a9aa1;
+
+      --color-border: #314049;
+      --color-divider: #2a363d;
+
+      --color-primary: #ff9d79;
+      --color-primary-soft: #ffc0a6;
+      --color-primary-deep: #ff8661;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.4);
+      --shadow-xl: 0 24px 56px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  /* 手动强制浅色 */
+  :root[data-theme="light"] {
+    color-scheme: light;
+  }
+
+  /* 手动强制深色 */
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-bg: #151a1d;
+    --color-bg-soft: #1c2328;
+    --color-bg-card: #202a31;
+
+    --color-text: #ebf1f2;
+    --color-text-soft: #b6c2c6;
+    --color-text-muted: #8a9aa1;
+
+    --color-border: #314049;
+    --color-divider: #2a363d;
+
+    --color-primary: #ff9d79;
+    --color-primary-soft: #ffc0a6;
+    --color-primary-deep: #ff8661;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 24px 56px rgba(0, 0, 0, 0.5);
+  }
+}

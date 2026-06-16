@@ -88,6 +88,7 @@
   --container-md:  960px;
   --container-lg:  1200px;
   --container-xl:  1400px;
+  --container-max: var(--container-lg);
 
   /* —— ⏱️ 动效时长 —— */
   --duration-fast:   150ms;
@@ -106,6 +107,19 @@
   --z-overlay:  500;
   --z-modal:    1000;
   --z-toast:    2000;
+
+  /* —— 🧩 语义化别名（便于新手维护）—— */
+  --color-surface: var(--color-bg-card);
+  --color-muted: var(--color-text-muted);
+  --color-focus: #0ea5e9;
+
+  --font-size-xs:  var(--fs-xs);
+  --font-size-sm:  var(--fs-sm);
+  --font-size-md:  var(--fs-base);
+  --font-size-lg:  var(--fs-lg);
+  --font-size-xl:  var(--fs-xl);
+  --font-size-2xl: var(--fs-2xl);
+  --font-size-3xl: var(--fs-3xl);
 }
 
 /* —— 🎬 尊重用户的动画偏好 —— */

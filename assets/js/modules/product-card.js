@@ -9,6 +9,12 @@ const STOCK_LABELS = {
   'out-of-stock': { text: '已售罄',   class: 'badge--muted' }
 };
 
+const STOCK_ALIAS = {
+  in_stock: 'in-stock',
+  low_stock: 'low-stock',
+  out_of_stock: 'out-of-stock'
+};
+
 const CATEGORY_LABELS = {
   toy:      '玩具类',
   clothing: '服装类',
@@ -23,9 +29,11 @@ const CATEGORY_LABELS = {
  * @returns {string} HTML 字符串
  */
 export function renderProductCard(product) {
-  const stock = STOCK_LABELS[product.stock] || STOCK_LABELS['in-stock'];
+  const normalizedStock = STOCK_ALIAS[product.stock] || product.stock;
+  const stock = STOCK_LABELS[normalizedStock] || STOCK_LABELS['in-stock'];
   const categoryLabel = CATEGORY_LABELS[product.category] || product.category;
-  const isSoldOut = product.stock === 'out-of-stock';
+  const isSoldOut = normalizedStock === 'out-of-stock';
+  const image = normalizeImage(product.images?.[0] || product.thumbnail);
 
   return `
     <article class="product-card ${isSoldOut ? 'is-sold-out' : ''}"
@@ -36,7 +44,7 @@ export function renderProductCard(product) {
          aria-label="查看 ${product.name} 详情">
 
         <div class="product-card__media">
-          <img src="${product.images[0]}"
+          <img src="${image}"
                alt="${product.name}"
                width="400" height="400"
                loading="lazy"
@@ -84,14 +92,16 @@ export function resolvePath(path, fromSubpage = false) {
  * 渲染商品卡片（带路径前缀处理）
  */
 export function renderProductCardWithBase(product, fromSubpage = false) {
+  const normalizedStock = STOCK_ALIAS[product.stock] || product.stock;
+
   const adjusted = {
     ...product,
-    images: product.images.map(p => resolvePath(p, fromSubpage))
+    images: normalizeImages(product).map(p => resolvePath(p, fromSubpage))
   };
 
-  const stock = STOCK_LABELS[product.stock] || STOCK_LABELS['in-stock'];
+  const stock = STOCK_LABELS[normalizedStock] || STOCK_LABELS['in-stock'];
   const categoryLabel = CATEGORY_LABELS[product.category] || product.category;
-  const isSoldOut = product.stock === 'out-of-stock';
+  const isSoldOut = normalizedStock === 'out-of-stock';
 
   // 子页面跳转到详情页用相对路径
   const detailLink = fromSubpage
@@ -137,4 +147,20 @@ export function renderProductCardWithBase(product, fromSubpage = false) {
       </a>
     </article>
   `;
+}
+
+function normalizeImages(product) {
+  if (Array.isArray(product.images) && product.images.length > 0) {
+    const normalized = product.images.map((img) => normalizeImage(img)).filter(Boolean);
+    if (normalized.length > 0) return normalized;
+  }
+
+  if (product.thumbnail) return [normalizeImage(product.thumbnail)];
+  return ['assets/images/products/placeholder.jpg'];
+}
+
+function normalizeImage(value) {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  return value.src || '';
 }

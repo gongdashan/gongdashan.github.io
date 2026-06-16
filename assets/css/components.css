@@ -199,8 +199,50 @@
     height: 24px;
   }
 
+  .site-header__theme {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background-color: var(--color-bg-card);
+    color: var(--color-text);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out),
+                background-color var(--duration-fast) var(--ease-out);
+  }
+
+  .theme-toggle:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-primary-soft);
+    background-color: var(--color-bg-soft);
+  }
+
   /* —— 移动端断点 —— */
   @media (max-width: 900px) {
+    .site-header__theme {
+      margin-left: auto;
+    }
+
+    .theme-toggle {
+      min-width: 74px;
+      justify-content: center;
+      padding-inline: var(--space-2);
+    }
+
+    .theme-toggle span:last-child {
+      display: none;
+    }
+
     .site-header__toggle {
       display: inline-flex;
     }
@@ -566,11 +608,33 @@
    🔘 筛选标签（chip）
    ============================================ */
 .filter-bar {
+  display: grid;
+  gap: var(--space-4);
+  justify-content: stretch;
+  margin-bottom: var(--space-7);
+}
+
+.filter-group {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-card);
+}
+
+.filter-group__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--color-text-soft);
+  font-weight: var(--fw-semibold);
+}
+
+.filter-group__chips {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  justify-content: center;
-  margin-bottom: var(--space-7);
 }
 
 .filter-chip {
@@ -618,6 +682,12 @@
 .filter-chip.is-active .filter-chip__count {
   background-color: rgba(255, 255, 255, 0.25);
   color: white;
+}
+
+@media (min-width: 960px) {
+  .filter-bar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* ============================================

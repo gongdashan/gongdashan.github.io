@@ -6,17 +6,10 @@
 import { initNavigation } from './modules/navigation.js';
 import { initHome }       from './modules/home.js';
 import { initShop }       from './modules/shop.js';
+import { applySavedTheme, initThemeToggle } from './modules/theme-toggle.js';
+import { initProductDetail } from './modules/product-detail.js';
 
-if ('fonts' in document) {
-  Promise.all([
-    document.fonts.load('1em "LXGW WenKai"'),
-    document.fonts.load('1em "Manrope"')
-  ]).then(() => {
-    document.documentElement.classList.add('fonts-loaded');
-  }).catch(() => {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-}
+applySavedTheme();
 
 const ready = (fn) => {
   if (document.readyState !== 'loading') fn();
@@ -25,15 +18,15 @@ const ready = (fn) => {
 
 ready(() => {
   initNavigation();
+  initThemeToggle();
 
   const page = document.body.dataset.page;
 
   if (page === 'home') initHome();
   if (page === 'shop') initShop();
+  if (page === 'product-detail') initProductDetail();
 
   document.querySelectorAll('[data-current-year]').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
-
-  console.log('🏔️ 小山设计社 · 网站启动 · 页面：', page);
 });

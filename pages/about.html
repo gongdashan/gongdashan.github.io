@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#E87A5D">
+  <title>关于我们 · 小山设计社</title>
+  <meta name="description" content="小山设计社团队介绍与服务方式，面向企业礼品采购与活动合作。">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/utilities.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body data-page="about">
+  <a href="#main" class="skip-link">跳到主要内容</a>
+
+  <div class="page-wrapper">
+    <header class="site-header" role="banner">
+      <div class="container">
+        <div class="site-header__inner">
+          <a href="../" class="site-header__logo" aria-label="小山设计社首页">
+            <img src="../assets/icons/logo.svg" alt="小山设计社" width="240" height="64">
+          </a>
+
+          <nav class="site-nav" id="site-nav" aria-label="主导航">
+            <ul class="site-nav__list" role="list">
+              <li><a class="site-nav__link" href="../">首页</a></li>
+              <li><a class="site-nav__link" href="shop.html">义卖商品</a></li>
+              <li><a class="site-nav__link" href="events.html">活动详情</a></li>
+              <li><a class="site-nav__link" href="contact.html">联系我们</a></li>
+              <li><a class="site-nav__link" href="volunteer.html">志愿者招募</a></li>
+              <li class="site-nav__cta"><a class="btn btn--primary btn--sm" href="contact.html">加入我们</a></li>
+            </ul>
+          </nav>
+
+          <button type="button" class="site-header__toggle" aria-controls="site-nav" aria-expanded="false" aria-label="打开菜单">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7"/>
+              <line x1="4" y1="12" x2="20" y2="12"/>
+              <line x1="4" y1="17" x2="20" y2="17"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="main" role="main">
+      <section class="about-hero section" aria-labelledby="about-title">
+        <div class="container container--md">
+          <h1 id="about-title">关于我们</h1>
+          <p class="about-hero__lede">
+            小山设计社专注于“好看、好用、好采购”的礼品方案，服务企业客户赠礼与活动物料场景。
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="about-value-title">
+        <div class="container">
+          <h2 id="about-value-title" class="about-section-title">我们坚持的三件事</h2>
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>公开透明</h3>
+              <p>商品信息与价格清晰可见，帮助采购方快速评估与决策。</p>
+            </article>
+            <article class="about-card">
+              <h3>沟通高效</h3>
+              <p>支持批量采购咨询，面向活动方和企业客户提供定制建议。</p>
+            </article>
+            <article class="about-card">
+              <h3>持续迭代</h3>
+              <p>我们会根据活动主题与反馈，持续更新商品与展示内容。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="about-team-title">
+        <div class="container container--md">
+          <h2 id="about-team-title" class="about-section-title">团队与协作方式</h2>
+          <article class="about-panel">
+            <p>
+              当前由小团队维护，采用静态站点方式确保内容更新简单、稳定、低门槛。
+              日常只需维护商品数据与页面文案，无需复杂部署流程。
+            </p>
+            <div class="about-actions">
+              <a class="btn btn--primary" href="contact.html">联系采购咨询</a>
+              <a class="btn btn--secondary" href="shop.html">浏览商品目录</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="site-footer__top">
+          <div>
+            <h3 class="site-footer__title">快速导航</h3>
+            <ul class="site-footer__list" role="list">
+              <li><a href="../">首页</a></li>
+              <li><a href="shop.html">义卖商品</a></li>
+              <li><a href="contact.html">联系我们</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p>© <span data-current-year>2026</span> 小山设计社</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
