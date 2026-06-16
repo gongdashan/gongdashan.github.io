@@ -261,11 +261,11 @@
     },
     {
       "id": "p06",
-      "name": "晚风随行帆布袋",
+      "name": "多层带拉链随性帆布袋，可容纳16寸电脑",
       "subtitle": "大容量 · 双面印花",
       "category": "bag",
       "series": "晚风",
-      "price": 89,
+      "price": 50,
       "originalPrice": 109,
       "currency": "CNY",
       "stock": "in_stock",
@@ -287,11 +287,15 @@
       },
       "images": [
         {
-          "src": "assets/images/products/placeholder.svg",
-          "alt": "晚风随行帆布袋"
+          "src": "assets/images/products/bagdarkblue.jpg",
+          "alt": "晚风随行帆布袋 深蓝色"
+        },
+        {
+          "src": "assets/images/products/baglightblue.jpg",
+          "alt": "晚风随行帆布袋 浅蓝色"
         }
       ],
-      "thumbnail": "assets/images/products/placeholder.svg",
+      "thumbnail": "assets/images/products/bagdarkblue.jpg",
       "description": "一只能装下书本、水杯和下班小菜场的大容量帆布袋。",
       "story": "在傍晚微风里散步,袋子里装着今天的烟火气。",
       "donation": {
