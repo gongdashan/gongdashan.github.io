@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "1.0.4",
+    "version": "1.0.5",
     "lastUpdated": "2026-06-16",
     "currency": "CNY",
     "currencySymbol": "¥"
@@ -380,6 +380,47 @@
       "thumbnail": "assets/images/products/p03.jpg",
       "description": "一个包搞定充电头、数据线、耳机和出差洗漱小物,拿取更高效。",
       "story": "让每次出门都更从容,物品各归其位,心情也更整齐。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p09",
+      "name": "短袖T恤小熊，还有黑皮哦",
+      "subtitle": "夏日穿搭 · 软萌小熊",
+      "category": "toy",
+      "series": "T恤小熊",
+      "price": 88,
+      "originalPrice": 118,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": false,
+      "isNew": true,
+      "tags": ["小熊", "短袖", "T恤", "黑皮"],
+      "colors": [
+        {
+          "name": "黑皮",
+          "hex": "#2B2B2B",
+          "available": true
+        }
+      ],
+      "specs": {
+        "尺寸": "约 18cm",
+        "材质": "短绒毛 + 填充棉",
+        "特点": "黑皮配色"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/BearTshirt.jpg",
+          "alt": "短袖T恤小熊，还有黑皮哦"
+        }
+      ],
+      "thumbnail": "assets/images/products/BearTshirt.jpg",
+      "description": "短袖T恤造型的小熊，带一点黑皮气质，软萌里又有点酷。",
+      "story": "给喜欢小熊的人，一点刚刚好的夏日陪伴。",
       "donation": {
         "enabled": true,
         "percentage": 20,
