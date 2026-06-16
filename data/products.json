@@ -133,11 +133,11 @@
     },
     {
       "id": "p03",
-      "name": "软糖云朵斜挎包",
+      "name": "多隔层电子产品洗漱收纳包",
       "subtitle": "轻量防泼水 · 日常通勤",
       "category": "bag",
       "series": "云朵",
-      "price": 159,
+      "price": 99,
       "originalPrice": 199,
       "currency": "CNY",
       "stock": "in_stock",
@@ -169,8 +169,8 @@
         }
       ],
       "thumbnail": "assets/images/products/p03.jpg",
-      "description": "蓬蓬软软的云朵轮廓,出门只装刚刚好的快乐。",
-      "story": "把下班路上的风和好心情,都轻轻装进包里。",
+      "description": "把下班路上和旅途中的美好心情都装进包里，身轻如燕奔赴前方。",
+      "story": "把下班路上和旅途中的美好心情都装进包里，身轻如燕奔赴前方。",
       "donation": {
         "enabled": true,
         "percentage": 20,
