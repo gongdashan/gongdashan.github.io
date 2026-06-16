@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "1.0.1",
-    "lastUpdated": "2026-05-26",
+    "version": "1.0.4",
+    "lastUpdated": "2026-06-16",
     "currency": "CNY",
     "currencySymbol": "¥"
   },
@@ -50,11 +50,11 @@
   "products": [
     {
       "id": "p01",
-      "name": "登山小熊保温杯",
+      "name": "思科毛衣小熊（大号)",
       "subtitle": "陶瓷内胆 · 喜式系列",
       "category": "cup",
       "series": "喜式",
-      "price": 128,
+      "price": 88,
       "originalPrice": 168,
       "currency": "CNY",
       "stock": "in_stock",
@@ -125,6 +125,257 @@
       "thumbnail": "assets/images/products/p02.jpg",
       "description": "谁能拒绝勇攀高峰的登山小熊呢?350ml 容量刚刚好,可手拎设计走到哪里都方便。",
       "story": "把对远方的期待装进杯子里,小熊陪你一起出发。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p03",
+      "name": "软糖云朵斜挎包",
+      "subtitle": "轻量防泼水 · 日常通勤",
+      "category": "bag",
+      "series": "云朵",
+      "price": 159,
+      "originalPrice": 199,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": true,
+      "isNew": true,
+      "tags": ["斜挎包", "轻量", "防泼水", "通勤"],
+      "colors": [
+        {
+          "name": "奶油白",
+          "hex": "#F5EFE2",
+          "available": true
+        },
+        {
+          "name": "抹茶绿",
+          "hex": "#7D9B76",
+          "available": true
+        }
+      ],
+      "specs": {
+        "尺寸": "23cm x 16cm x 8cm",
+        "材质": "防泼水尼龙 + 织带肩带",
+        "重量": "约 280g"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/p03.jpg",
+          "alt": "软糖云朵斜挎包"
+        }
+      ],
+      "thumbnail": "assets/images/products/p03.jpg",
+      "description": "蓬蓬软软的云朵轮廓,出门只装刚刚好的快乐。",
+      "story": "把下班路上的风和好心情,都轻轻装进包里。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p04",
+      "name": "星球漫游捏捏乐",
+      "subtitle": "解压小玩具 · 亲肤硅胶",
+      "category": "toy",
+      "series": "慢慢玩",
+      "price": 69,
+      "originalPrice": 89,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": false,
+      "isNew": true,
+      "tags": ["玩具", "解压", "硅胶", "随身"],
+      "colors": [
+        {
+          "name": "银河蓝",
+          "hex": "#4F6D9D",
+          "available": true
+        }
+      ],
+      "specs": {
+        "材质": "食品级硅胶",
+        "尺寸": "约 7cm",
+        "适用年龄": "6岁以上"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/placeholder.svg",
+          "alt": "星球漫游捏捏乐"
+        }
+      ],
+      "thumbnail": "assets/images/products/placeholder.svg",
+      "description": "捏一捏,把紧绷的小情绪慢慢放掉。",
+      "story": "灵感来自深夜抬头看到的第一颗星。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p05",
+      "name": "晨雾玻璃吸管杯",
+      "subtitle": "耐热玻璃 · 500ml",
+      "category": "cup",
+      "series": "晨雾",
+      "price": 99,
+      "originalPrice": 129,
+      "currency": "CNY",
+      "stock": "low_stock",
+      "stockLabel": "库存紧张",
+      "featured": false,
+      "isNew": false,
+      "tags": ["杯子", "玻璃杯", "吸管", "高颜值"],
+      "colors": [
+        {
+          "name": "雾粉",
+          "hex": "#E7C9CB",
+          "available": true
+        }
+      ],
+      "specs": {
+        "容量": "500ml",
+        "材质": "高硼硅玻璃 + 食品级硅胶",
+        "耐热范围": "-20°C ~ 120°C"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/placeholder.svg",
+          "alt": "晨雾玻璃吸管杯"
+        }
+      ],
+      "thumbnail": "assets/images/products/placeholder.svg",
+      "description": "晨雾一样温柔的雾粉杯身,让补水这件事变得更值得期待。",
+      "story": "希望每一次举杯,都在提醒你慢一点也没关系。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p06",
+      "name": "晚风随行帆布袋",
+      "subtitle": "大容量 · 双面印花",
+      "category": "bag",
+      "series": "晚风",
+      "price": 89,
+      "originalPrice": 109,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": true,
+      "isNew": false,
+      "tags": ["帆布袋", "大容量", "环保", "日常"],
+      "colors": [
+        {
+          "name": "燕麦色",
+          "hex": "#D6C6A8",
+          "available": true
+        }
+      ],
+      "specs": {
+        "尺寸": "36cm x 40cm",
+        "材质": "12安纯棉帆布",
+        "承重": "约 8kg"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/placeholder.svg",
+          "alt": "晚风随行帆布袋"
+        }
+      ],
+      "thumbnail": "assets/images/products/placeholder.svg",
+      "description": "一只能装下书本、水杯和下班小菜场的大容量帆布袋。",
+      "story": "在傍晚微风里散步,袋子里装着今天的烟火气。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p07",
+      "name": "午后毛线小熊挂件",
+      "subtitle": "手作风 · 包包点缀",
+      "category": "toy",
+      "series": "毛线小熊",
+      "price": 58,
+      "originalPrice": 78,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": false,
+      "isNew": true,
+      "tags": ["挂件", "毛绒", "手作风", "礼物"],
+      "colors": [
+        {
+          "name": "奶茶棕",
+          "hex": "#9D7B5E",
+          "available": true
+        }
+      ],
+      "specs": {
+        "尺寸": "约 10cm",
+        "材质": "涤纶纤维 + 金属挂扣",
+        "用途": "包袋挂饰/钥匙挂件"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/placeholder.svg",
+          "alt": "午后毛线小熊挂件"
+        }
+      ],
+      "thumbnail": "assets/images/products/placeholder.svg",
+      "description": "软乎乎的小熊挂件,让每天出门都多一点可爱仪式感。",
+      "story": "像把一团晒过太阳的毛线云,悄悄挂在你的包上。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p08",
+      "name": "BR 多隔层电子产品洗漱收纳包",
+      "subtitle": "多分区收纳 · 出行必备",
+      "category": "bag",
+      "series": "BR",
+      "price": 99,
+      "originalPrice": 129,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": false,
+      "isNew": true,
+      "tags": ["收纳包", "多隔层", "电子配件", "洗漱"],
+      "colors": [
+        {
+          "name": "墨黑",
+          "hex": "#2E3138",
+          "available": true
+        }
+      ],
+      "specs": {
+        "尺寸": "24cm x 16cm x 10cm",
+        "材质": "防泼水面料 + 里布分仓",
+        "结构": "主仓 + 网袋 + 弹力隔层"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/p03.jpg",
+          "alt": "BR 多隔层电子产品洗漱收纳包"
+        }
+      ],
+      "thumbnail": "assets/images/products/p03.jpg",
+      "description": "一个包搞定充电头、数据线、耳机和出差洗漱小物,拿取更高效。",
+      "story": "让每次出门都更从容,物品各归其位,心情也更整齐。",
       "donation": {
         "enabled": true,
         "percentage": 20,
