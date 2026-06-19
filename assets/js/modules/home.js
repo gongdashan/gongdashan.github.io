@@ -59,7 +59,7 @@ async function renderFeaturedProducts() {
     const data = await res.json();
 
     const list = data.items || data.products || [];
-    const featured = list.filter(p => p.featured).slice(0, 4);
+    const featured = list.filter(p => p.featured);
     if (featured.length === 0) {
       container.innerHTML = '<p style="text-align:center;color:var(--color-text-muted);">暂无精选商品</p>';
       container.setAttribute('aria-busy', 'false');
