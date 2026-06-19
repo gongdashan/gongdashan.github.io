@@ -426,6 +426,93 @@
         "percentage": 20,
         "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
       }
+    },
+    {
+      "id": "p10",
+      "name": "喜式纯钛内胆便携手拎咖啡杯保温杯400ml礼盒装",
+      "subtitle": "400ml · 纯钛内胆 · 可手拎 · 喜式系列",
+      "category": "cup",
+      "series": "喜式",
+      "price": 199,
+      "originalPrice": 299,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": true,
+      "isNew": true,
+      "tags": ["保温杯", "纯钛内胆", "便携", "礼盒装", "喜式"],
+      "colors": [
+        {
+          "name": "经典钛色",
+          "hex": "#A8A8A8",
+          "available": true
+        }
+      ],
+      "specs": {
+        "容量": "400ml",
+        "材质": "316不锈钢 + 纯钛内胆",
+        "保温时长": "12小时",
+        "特点": "可手拎设计"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/cup-tai.jpg",
+          "alt": "喜式纯钛内胆便携手拎咖啡杯保温杯400ml礼盒装"
+        }
+      ],
+      "thumbnail": "assets/images/products/cup-tai.jpg",
+      "description": "轻便随性，随意装包不漏；无惧酸碱；礼物传情达意，心意长久陪伴；包含礼品盒子和礼品口袋。",
+      "story": "一个好杯子，装的是用心陪伴的念想。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p11",
+      "name": "小号卫衣熊钥匙扣",
+      "subtitle": "可爱卡通 · 玩具挂件",
+      "category": "toy",
+      "series": "熊系列",
+      "price": 28,
+      "originalPrice": 39,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": true,
+      "isNew": true,
+      "tags": ["钥匙扣", "卫衣熊", "小号", "可爱", "玩具"],
+      "colors": [
+        {
+          "name": "默认款",
+          "hex": "#8B7355",
+          "available": true
+        }
+      ],
+      "specs": {
+        "尺寸": "约 5cm",
+        "材质": "软绒毛 + 填充棉",
+        "特点": "可挂钥匙"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/littlebear.jpg",
+          "alt": "小号卫衣熊钥匙扣"
+        },
+        {
+          "src": "assets/images/products/littlebear2.jpg",
+          "alt": "小号卫衣熊钥匙扣"
+        }
+      ],
+      "thumbnail": "assets/images/products/littlebear.jpg",
+      "description": "书包上挂上你的童心。",
+      "story": "一个小小的陪伴，装在你随处可见的地方。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
     }
   ]
 }
