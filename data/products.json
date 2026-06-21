@@ -86,6 +86,14 @@
         {
           "src": "assets/images/products/棒球帽正面.jpg",
           "alt": "大头也可以戴的多种配色男女棒球帽"
+        },
+        {
+          "src": "assets/images/products/棒球帽正面1.jpg",
+          "alt": "大头也可以戴的多种配色男女棒球帽"
+        },
+        {
+          "src": "assets/images/products/棒球帽侧面.jpg",
+          "alt": "大头也可以戴的多种配色男女棒球帽"
         }
       ],
       "thumbnail": "assets/images/products/棒球帽正面.jpg",
@@ -222,11 +230,15 @@
       },
       "images": [
         {
+          "src": "assets/images/products/sweaterbears.jpg",
+          "alt": "思科毛衣小熊（大号)"
+        },
+        {
           "src": "assets/images/products/p01-1.jpg",
           "alt": "登山小熊保温杯"
         }
       ],
-      "thumbnail": "assets/images/products/p01-1.jpg",
+      "thumbnail": "assets/images/products/sweaterbears.jpg",
       "description": "一只背着小包去登山的熊,提醒你每一次出门都值得期待。陶瓷内胆守护每一口水的纯净。",
       "story": "灵感来自每个想去远方的清晨。",
       "donation": {
@@ -609,6 +621,56 @@
       "thumbnail": "assets/images/products/cup-tai.jpg",
       "description": "轻便随性，随意装包不漏；无惧酸碱；礼物传情达意，心意长久陪伴；包含礼品盒子和礼品口袋。",
       "story": "一个好杯子，装的是用心陪伴的念想。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p15",
+      "name": "喜式钛杯礼盒柠檬清新印花400ml",
+      "subtitle": "400ml · 纯钛内胆 · 柠檬印花 · 喜式系列",
+      "category": "cup",
+      "series": "喜式",
+      "price": 199,
+      "originalPrice": 299,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": true,
+      "isNew": true,
+      "tags": ["保温杯", "纯钛内胆", "柠檬印花", "礼盒装", "喜式"],
+      "colors": [
+        {
+          "name": "柠檬清新",
+          "hex": "#E7D86A",
+          "available": true
+        }
+      ],
+      "specs": {
+        "容量": "400ml",
+        "材质": "316不锈钢 + 纯钛内胆",
+        "保温时长": "12小时",
+        "特点": "柠檬清新印花"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/柠檬钛杯1.jpg",
+          "alt": "喜式钛杯礼盒柠檬清新印花400ml"
+        },
+        {
+          "src": "assets/images/products/柠檬钛杯2.jpg",
+          "alt": "喜式钛杯礼盒柠檬清新印花400ml"
+        },
+        {
+          "src": "assets/images/products/柠檬钛杯3.jpg",
+          "alt": "喜式钛杯礼盒柠檬清新印花400ml"
+        }
+      ],
+      "thumbnail": "assets/images/products/柠檬钛杯1.jpg",
+      "description": "轻便随性，随意装包不漏；无惧酸碱；柠檬清新印花让礼物更有活力，心意长久陪伴；包含礼品盒子和礼品口袋。",
+      "story": "把清爽的柠檬气息，装进每一次出门的陪伴里。",
       "donation": {
         "enabled": true,
         "percentage": 20,
