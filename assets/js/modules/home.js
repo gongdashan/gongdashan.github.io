@@ -5,7 +5,7 @@
  * @module home
  */
 
-import { renderProductCardWithBase } from './product-card.js';
+import { renderProductCardWithBase, initProductCardCarousels } from './product-card.js';
 
 export async function initHome() {
   await Promise.all([
@@ -68,6 +68,7 @@ async function renderFeaturedProducts() {
 
     // 首页：fromSubpage = false
     container.innerHTML = featured.map(p => renderProductCardWithBase(p, false)).join('');
+    initProductCardCarousels(container);
     container.setAttribute('aria-busy', 'false');
   } catch (err) {
     console.error('[home] 渲染精选商品失败：', err);

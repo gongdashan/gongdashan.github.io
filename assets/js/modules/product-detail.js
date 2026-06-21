@@ -128,7 +128,6 @@ function initCarousel(root) {
 
   if (slides.length <= 1) return;
 
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let index = 0;
   let timer = null;
 
@@ -156,7 +155,7 @@ function initCarousel(root) {
   };
 
   const start = () => {
-    if (prefersReduced || slides.length <= 1) return;
+    if (slides.length <= 1) return;
     stop();
     timer = window.setInterval(() => show(index + 1), 3500);
   };

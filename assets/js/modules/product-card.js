@@ -116,13 +116,17 @@ export function renderProductCardWithBase(product, fromSubpage = false) {
          class="product-card__link"
          aria-label="查看 ${adjusted.name} 详情">
 
-        <div class="product-card__media">
-          <img src="${adjusted.images[0]}"
-               alt="${adjusted.name}"
-               width="400" height="400"
-               loading="lazy"
-               decoding="async"
-               class="product-card__image">
+        <div class="product-card__media" data-card-carousel>
+          ${adjusted.images.map((src, idx) => `
+            <img src="${src}"
+                 alt="${adjusted.name}"
+                 width="400" height="400"
+                 loading="${idx === 0 ? 'eager' : 'lazy'}"
+                 decoding="async"
+                 class="product-card__image ${idx === 0 ? 'is-active' : ''}"
+                 data-card-slide
+                 aria-hidden="${idx === 0 ? 'false' : 'true'}">
+          `).join('')}
 
           <span class="product-card__category">${categoryLabel}</span>
 
@@ -147,6 +151,50 @@ export function renderProductCardWithBase(product, fromSubpage = false) {
       </a>
     </article>
   `;
+}
+
+/**
+ * 启动商品卡片多图自动轮播（仅对多图商品生效）
+ * @param {ParentNode} root
+ */
+export function initProductCardCarousels(root = document) {
+  const cards = Array.from(root.querySelectorAll('[data-card-carousel]'));
+
+  cards.forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll('[data-card-slide]'));
+    if (slides.length <= 1) return;
+
+    let index = 0;
+    let timer = null;
+
+    const show = (nextIndex) => {
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        const active = slideIndex === index;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+    };
+
+    const stop = () => {
+      if (!timer) return;
+      window.clearInterval(timer);
+      timer = null;
+    };
+
+    const start = () => {
+      stop();
+      timer = window.setInterval(() => show(index + 1), 2600);
+    };
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+
+    show(0);
+    start();
+  });
 }
 
 function normalizeImages(product) {

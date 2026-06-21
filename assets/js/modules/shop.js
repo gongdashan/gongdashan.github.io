@@ -7,7 +7,7 @@
  * @module shop
  */
 
-import { renderProductCardWithBase } from './product-card.js';
+import { renderProductCardWithBase, initProductCardCarousels } from './product-card.js';
 
 let allProducts = [];
 let categories  = [];
@@ -286,5 +286,6 @@ function renderGrid() {
 
   if (empty) empty.hidden = true;
   grid.innerHTML = list.map(p => renderProductCardWithBase(p, true)).join('');
+  initProductCardCarousels(grid);
   grid.setAttribute('aria-busy', 'false');
 }
