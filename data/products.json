@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.5",
-    "lastUpdated": "2026-06-16",
+    "lastUpdated": "2026-06-21",
     "currency": "CNY",
     "currencySymbol": "¥"
   },
@@ -31,12 +31,20 @@
       "order": 3
     },
     {
+      "id": "clothing",
+      "name": "服饰帽子",
+      "tagline": "把可爱戴在头上",
+      "description": "让出场和日常都多一点轻松的造型感。",
+      "icon": "🧢",
+      "order": 4
+    },
+    {
       "id": "stationery",
       "name": "文具",
       "tagline": "灵感偷偷发芽",
       "description": "笔尖落下的那一刻,世界悄悄变得柔软。",
       "icon": "✏️",
-      "order": 4
+      "order": 5
     },
     {
       "id": "other",
@@ -44,10 +52,148 @@
       "tagline": "还有一些温柔的小事",
       "description": "生活里那些说不上名字,却让人想要珍藏的小物。",
       "icon": "🌿",
-      "order": 5
+      "order": 6
     }
   ],
   "products": [
+    {
+      "id": "p14",
+      "name": "大头也可以戴的多种配色男女棒球帽",
+      "subtitle": "可调节 · 头围友好 · 日常百搭",
+      "category": "clothing",
+      "series": "帽子系列",
+      "price": 60,
+      "originalPrice": 79,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": true,
+      "isNew": true,
+      "tags": ["棒球帽", "帽子", "可调节", "男女通用", "服饰"],
+      "colors": [
+        {
+          "name": "多种配色",
+          "hex": "#7A8DA6",
+          "available": true
+        }
+      ],
+      "specs": {
+        "头围": "58cm以内",
+        "材质": "棉质面料",
+        "特点": "可调节帽围"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/棒球帽正面.jpg",
+          "alt": "大头也可以戴的多种配色男女棒球帽"
+        }
+      ],
+      "thumbnail": "assets/images/products/棒球帽正面.jpg",
+      "description": "58以内，轻松可调，男女都能戴。",
+      "story": "把合适的尺寸和好看的颜色，一起戴出门。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p13",
+      "name": "浅蓝logo棒球帽（灰/深蓝/深红）",
+      "subtitle": "可调节 · 日常百搭",
+      "category": "clothing",
+      "series": "帽子系列",
+      "price": 60,
+      "originalPrice": 79,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": true,
+      "isNew": true,
+      "tags": ["棒球帽", "帽子", "可调节", "logo", "服饰"],
+      "colors": [
+        {
+          "name": "灰",
+          "hex": "#8C9198",
+          "available": true
+        },
+        {
+          "name": "深蓝",
+          "hex": "#243B5A",
+          "available": true
+        },
+        {
+          "name": "深红",
+          "hex": "#7F2730",
+          "available": true
+        }
+      ],
+      "specs": {
+        "头围": "56-60cm",
+        "材质": "棉质面料",
+        "特点": "可调节帽围"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/CapsV2.jpg",
+          "alt": "浅蓝logo棒球帽（灰/深蓝/深红）"
+        }
+      ],
+      "thumbnail": "assets/images/products/CapsV2.jpg",
+      "description": "头围56-60cm可调节。",
+      "story": "把轻松的日常，戴得更顺手一点。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
+    {
+      "id": "p12",
+      "name": "Polo衫白皮和黄黑皮小熊",
+      "subtitle": "可爱小熊 · 童心挂件",
+      "category": "toy",
+      "series": "熊系列",
+      "price": 88,
+      "originalPrice": 118,
+      "currency": "CNY",
+      "stock": "in_stock",
+      "stockLabel": "现货",
+      "featured": true,
+      "isNew": true,
+      "tags": ["小熊", "Polo衫", "可爱", "玩具", "挂件"],
+      "colors": [
+        {
+          "name": "白皮",
+          "hex": "#F4EBDD",
+          "available": true
+        },
+        {
+          "name": "黄黑皮",
+          "hex": "#8B6B2E",
+          "available": true
+        }
+      ],
+      "specs": {
+        "尺寸": "约 18cm",
+        "材质": "短绒毛 + 填充棉",
+        "特点": "Polo衫造型"
+      },
+      "images": [
+        {
+          "src": "assets/images/products/BearTshirt.jpg",
+          "alt": "Polo衫白皮和黄黑皮小熊"
+        }
+      ],
+      "thumbnail": "assets/images/products/BearTshirt.jpg",
+      "description": "展览和会议出镜王，没有人不夸他可爱的~",
+      "story": "把每一次出场都变成一点点可爱加成。",
+      "donation": {
+        "enabled": true,
+        "percentage": 20,
+        "note": "每售出一件,将向白血病及肾病患儿家庭捐赠 ¥25"
+      }
+    },
     {
       "id": "p01",
       "name": "思科毛衣小熊（大号)",

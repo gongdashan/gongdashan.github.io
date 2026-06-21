@@ -17,7 +17,7 @@ const STOCK_ALIAS = {
 
 const CATEGORY_LABELS = {
   toy:      '玩具类',
-  clothing: '服装类',
+  clothing: '服饰帽子',
   bag:      '包',
   cup:      '杯子',
   other:    '其它'
