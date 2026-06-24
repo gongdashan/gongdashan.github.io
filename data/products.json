@@ -46,7 +46,7 @@
       "icon": "✏️",
       "order": 5
     },
-    {
+          "src": "assets/images/products/litttle bear new.jpg",
       "id": "other",
       "name": "其他",
       "tagline": "还有一些温柔的小事",
@@ -54,7 +54,7 @@
       "icon": "🌿",
       "order": 6
     }
-  ],
+      "thumbnail": "assets/images/products/litttle bear new.jpg",
   "products": [
     {
       "id": "p14",
@@ -226,7 +226,7 @@
       },
       "images": [
         {
-          "src": "assets/images/products/sweaterbears.jpg",
+          "src": "assets/images/products/sweaterbears2.jpg",
           "alt": "思科毛衣小熊（大号)"
         },
         {
@@ -234,7 +234,7 @@
           "alt": "登山小熊保温杯"
         }
       ],
-      "thumbnail": "assets/images/products/sweaterbears.jpg",
+      "thumbnail": "assets/images/products/sweaterbears2.jpg",
       "description": "一只背着小包去登山的熊,提醒你每一次出门都值得期待。陶瓷内胆守护每一口水的纯净。",
       "story": "灵感来自每个想去远方的清晨。",
       "donation": {
@@ -701,7 +701,7 @@
       },
       "images": [
         {
-          "src": "assets/images/products/littlebear.jpg",
+          "src": "assets/images/products/litttle bear new.jpg",
           "alt": "小号卫衣熊钥匙扣"
         },
         {
@@ -709,7 +709,7 @@
           "alt": "小号卫衣熊钥匙扣"
         }
       ],
-      "thumbnail": "assets/images/products/littlebear.jpg",
+      "thumbnail": "assets/images/products/litttle bear new.jpg",
       "description": "书包上挂上你的童心。",
       "story": "一个小小的陪伴，装在你随处可见的地方。",
       "donation": {
